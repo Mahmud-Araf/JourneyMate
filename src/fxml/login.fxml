@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="password_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="663.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
+   <children>
+      <Accordion layoutX="239.0" layoutY="184.0" />
+      <Label alignment="CENTER" layoutX="349.0" layoutY="35.0" text="Secure Login" textFill="WHITE">
+         <font>
+            <Font name="Bookman Old Style Bold" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="99.0" layoutY="40.0" />
+            <Label alignment="CENTER" layoutX="20.0" layoutY="237.0" text="𝒥𝑜𝓊𝓇𝓃𝑒𝓎ℳ𝒶𝓉𝑒!" textFill="#054648">
+               <font>
+                  <Font name="Century Schoolbook Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="245.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/river_mountain.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="112.0" fitWidth="156.0" layoutX="147.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/tree.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="61.0" layoutY="210.0" text="Welcome to" textFill="#91075c">
+               <font>
+                  <Font name="Lucida Calligraphy Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="50.0" layoutY="496.0" text="copyright (c) All Rights Reserved" textFill="#0d0d0d">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="79.0" fitWidth="90.0" layoutX="530.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/security_lock.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="username_field" layoutX="480.0" layoutY="171.0" promptText="username" />
+      <Label alignment="TOP_LEFT" layoutX="332.0" layoutY="171.0" prefHeight="26.0" prefWidth="126.0" text="Enter Username" textFill="WHITE">
+         <font>
+            <Font name="Inter Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="332.0" layoutY="234.0" text="Enter password" textFill="WHITE">
+         <font>
+            <Font name="Inter Bold" size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password_field" layoutX="480.0" layoutY="234.0" promptText="password" />
+      <Label alignment="CENTER" layoutX="387.0" layoutY="374.0" text="Don't have any account?" textFill="#dfd7d7">
+         <font>
+            <Font name="Inter Bold" size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="412.0" layoutY="399.0" mnemonicParsing="false" onAction="#clickSignUp" text="Sign Up">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="login_button" layoutX="422.0" layoutY="311.0" mnemonicParsing="false" text="Login">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
