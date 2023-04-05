@@ -25,7 +25,7 @@
       </AnchorPane>
       <AnchorPane fx:id="SidebarPane" layoutX="-200.0" layoutY="50.0" prefHeight="450.0" prefWidth="200.0" style="-fx-background-color: #008080; -fx-border-color: White;" visible="false">
          <children>
-            <Button fx:id="ProfileButton" alignment="TOP_LEFT" layoutY="135.0" mnemonicParsing="false" onAction="#clickProfileButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #008080; -fx-background-radius: 50;">
+            <Button fx:id="ClientsButton" alignment="TOP_LEFT" layoutY="135.0" mnemonicParsing="false" onAction="#clickClientsButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #008080; -fx-background-radius: 50;">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,7 +52,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="66.0" layoutY="153.0" text="Profile">
+            <Label layoutX="66.0" layoutY="153.0" text="Clients">
                <font>
                   <Font name="Liberation Mono Bold" size="25.0" />
                </font>

@@ -18,7 +18,7 @@ public class Dashboard_Controller implements Initializable{
     @FXML
     private Button AboutButton;
     @FXML
-    private Button ProfileButton;
+    private Button ClientsButton;
     @FXML
     private Button PackagesButton;
     @FXML
@@ -67,15 +67,15 @@ public class Dashboard_Controller implements Initializable{
     public void clickAboutButton(ActionEvent event)
     {
            AboutButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
-           ProfileButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
            PackagesButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
            BookingButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
     }
 
-    public void clickProfileButton(ActionEvent event)
+    public void clickClientsButton(ActionEvent event)
     {
            AboutButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           ProfileButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
            PackagesButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
            BookingButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
     }
@@ -83,7 +83,7 @@ public class Dashboard_Controller implements Initializable{
     public void clickPackagesButton(ActionEvent event)
     {
            AboutButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           ProfileButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
            PackagesButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
            BookingButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
     }
@@ -91,7 +91,7 @@ public class Dashboard_Controller implements Initializable{
     public void clickBookingButton(ActionEvent event)
     {
            AboutButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           ProfileButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
            PackagesButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
            BookingButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
     }
