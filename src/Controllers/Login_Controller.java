@@ -13,7 +13,14 @@ public class Login_Controller {
     private Stage stage;
 
     public void clickSignUp(ActionEvent event) throws IOException {
-        AnchorPane  root = FXMLLoader.load(getClass().getResource("fxml/signup.fxml"));
+        AnchorPane  root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    public void clickSignIn(ActionEvent event) throws IOException{
+        AnchorPane root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
