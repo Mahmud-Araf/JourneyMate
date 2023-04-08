@@ -39,15 +39,9 @@ public class Dashboard_Controller implements Initializable{
         
         DashboardImg.setOnMouseClicked(event->
         {
-            
-            
-
+ 
             if(SidebarPane.isVisible()==false)
             {   
-                ContentPane.setLayoutX(200);
-                ContentPane.setMaxWidth(550);
-                ContentPane.setMinWidth(550);
-                ContentPane.setPrefWidth(550);
                 SidebarPane.setVisible(true);
               
                 FadeTransition ft=new FadeTransition(Duration.seconds(0.5),SidebarPane);
@@ -62,11 +56,7 @@ public class Dashboard_Controller implements Initializable{
             }
             else
             {   
-                ContentPane.setLayoutX(0);
-                ContentPane.setMaxWidth(750);
-                ContentPane.setMinWidth(750);
-                ContentPane.setPrefWidth(750);
-            
+                
                 FadeTransition ft=new FadeTransition(Duration.seconds(0.5),SidebarPane);
                 ft.setFromValue(1);
                 ft.setToValue(0);
