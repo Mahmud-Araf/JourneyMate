@@ -77,34 +77,34 @@ public class Dashboard_Controller implements Initializable{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("about.fxml"));
         AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().setAll(newPane);  
-        AboutButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
-        ClientsButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-        PackagesButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-        BookingButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
+        AboutButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
+        ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+        PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+        BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
     public void clickClientsButton(ActionEvent event)
     {      ContentPane.getChildren().clear();
-           AboutButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           ClientsButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
-           PackagesButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           BookingButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
+           AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
+           PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
     public void clickPackagesButton(ActionEvent event)
     {      
-           AboutButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           ClientsButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           PackagesButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
-           BookingButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
+           AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           PackagesButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
+           BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
     public void clickBookingButton(ActionEvent event)
     {
-           AboutButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           ClientsButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           PackagesButton.setStyle("-fx-background-color: #008080;"+"-fx-background-radius:50;");
-           BookingButton.setStyle("-fx-background-color:  #03fcf8;"+"-fx-background-radius:50;");
+           AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+           BookingButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
     }
 
     

@@ -10,9 +10,9 @@
 
 <BorderPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
    <left>
-      <AnchorPane fx:id="SidebarPane" style="-fx-background-color: #008080; -fx-border-color: White;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="SidebarPane" style="-fx-background-color: #e36212; -fx-border-color: White;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="ClientsButton" alignment="TOP_LEFT" layoutY="135.0" mnemonicParsing="false" onAction="#clickClientsButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #008080; -fx-background-radius: 50;">
+            <Button fx:id="ClientsButton" alignment="TOP_LEFT" layoutY="135.0" mnemonicParsing="false" onAction="#clickClientsButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -21,7 +21,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="PackagesButton" alignment="TOP_LEFT" layoutY="240.0" mnemonicParsing="false" onAction="#clickPackagesButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #008080; -fx-background-radius: 50;">
+            <Button fx:id="PackagesButton" alignment="TOP_LEFT" layoutY="240.0" mnemonicParsing="false" onAction="#clickPackagesButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -30,7 +30,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="BookingButton" alignment="TOP_LEFT" layoutY="345.0" maxWidth="60.0" mnemonicParsing="false" onAction="#clickBookingButton" prefHeight="200.0" style="-fx-background-color: #008080; -fx-background-radius: 50;">
+            <Button fx:id="BookingButton" alignment="TOP_LEFT" layoutY="345.0" mnemonicParsing="false" onAction="#clickBookingButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -54,7 +54,7 @@
                   <Font name="Liberation Mono Bold" size="25.0" />
                </font>
             </Label>
-            <Button fx:id="AboutButton" alignment="TOP_LEFT" layoutY="30.0" mnemonicParsing="false" onAction="#clickAboutButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #008080; -fx-background-radius: 50;">
+            <Button fx:id="AboutButton" alignment="TOP_LEFT" layoutY="30.0" mnemonicParsing="false" onAction="#clickAboutButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
                <graphic>
                   <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -72,14 +72,14 @@
       </AnchorPane>
    </left>
    <top>
-      <AnchorPane prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: #008080; -fx-border-color: White;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: #e36212; -fx-border-color: White;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="DashboardImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: White;">
                <image>
                   <Image url="@../img/menu.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="358.0" layoutY="1.0" prefHeight="54.0" prefWidth="291.0" style="-fx-background-color: #03fcf8; -fx-border-color: Black;" text="  JourneyMate " textAlignment="CENTER" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="357.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" layoutX="358.0" layoutY="1.0" prefHeight="54.0" prefWidth="291.0" style="-fx-background-color: Black; -fx-border-color: Black;" text="  JourneyMate " textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="357.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font name="System Bold Italic" size="35.0" />
                </font>

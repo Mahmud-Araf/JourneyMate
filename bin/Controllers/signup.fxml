@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -8,68 +7,48 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="663.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Accordion layoutX="239.0" layoutY="184.0" />
-      <Label alignment="CENTER" layoutX="404.0" layoutY="28.0" text="Sign Up" textFill="#ececec">
-         <font>
-            <Font name="Bookman Old Style Bold" size="28.0" />
-         </font>
-      </Label>
-      <TextField layoutX="473.0" layoutY="147.0" promptText="email" />
-      <AnchorPane prefHeight="524.0" prefWidth="294.0" style="-fx-background-color: white;">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
+   <right>
+      <AnchorPane prefHeight="600.0" prefWidth="543.0" style="-fx-background-color: #e36212;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="99.0" layoutY="40.0" />
-            <Label alignment="CENTER" layoutX="35.0" layoutY="268.0" text="𝒥𝑜𝓊𝓇𝓃𝑒𝓎ℳ𝒶𝓉𝑒!" textFill="#054648">
+            <Label layoutX="60.0" layoutY="312.0" text="𝑵𝒂𝒎𝒆:">
                <font>
-                  <Font name="Century Schoolbook Bold" size="36.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
-            <ImageView fitHeight="245.0" fitWidth="210.0" layoutX="-24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/river_mountain.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="112.0" fitWidth="156.0" layoutX="147.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/tree.png" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" layoutX="81.0" layoutY="207.0" text="Welcome to" textFill="#91075c">
+            <Label layoutX="41.0" layoutY="357.0" text="𝑷𝒂𝒔𝒔𝒘𝒐𝒓𝒅:">
                <font>
-                  <Font name="Lucida Calligraphy Italic" size="24.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="69.0" layoutY="503.0" text="copyright (c) All Rights Reserved" textFill="#0d0d0d">
+            <TextField layoutX="183.0" layoutY="315.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <PasswordField layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <Button alignment="CENTER" layoutX="211.0" layoutY="433.0" mnemonicParsing="false" onAction="#clickSignUp" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑼𝒑" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Verdana" size="10.0" />
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Label layoutX="59.0" layoutY="257.0" text="𝑬𝒎𝒂𝒊𝒍:">
+               <font>
+                  <Font size="25.0" />
                </font>
             </Label>
-         </children>
-      </AnchorPane>
-      <TextField layoutX="473.0" layoutY="193.0" promptText="username" />
-      <Label alignment="TOP_LEFT" layoutX="346.0" layoutY="150.0" text="Enter email" textFill="WHITE">
-         <font>
-            <Font name="Inter Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="TOP_LEFT" layoutX="324.0" layoutY="192.0" prefHeight="26.0" prefWidth="126.0" text="Enter Username" textFill="WHITE">
-         <font>
-            <Font name="Inter Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="TOP_LEFT" layoutX="318.0" layoutY="238.0" text="Enter password" textFill="WHITE">
-         <font>
-            <Font name="Inter Bold" size="14.0" />
-         </font>
-      </Label>
-      <PasswordField layoutX="473.0" layoutY="235.0" promptText="password" />
-      <Button layoutX="411.0" layoutY="322.0" mnemonicParsing="false" text="Sign Up">
-         <font>
-            <Font name="Verdana" size="18.0" />
-         </font>
-      </Button>
-   </children>
-</AnchorPane>
+            <TextField layoutX="183.0" layoutY="260.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <Label layoutX="227.0" layoutY="154.0" text="𝑺𝒊𝒈𝒏 𝑼𝒑">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </right>
+   <left>
+      <ImageView fitHeight="604.0" fitWidth="458.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../img/road.jpg" />
+         </image>
+      </ImageView>
+   </left>
+</BorderPane>
