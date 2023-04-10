@@ -24,7 +24,7 @@ public class Login_Controller {
         BorderPane root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setResizable(true);
+        stage.setResizable(false);
         stage.show();
     }
 

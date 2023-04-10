@@ -14,14 +14,14 @@
    <right>
       <AnchorPane prefHeight="600.0" prefWidth="543.0" style="-fx-background-color: #e36212;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="153.0" layoutY="14.0" text="𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓣𝓸" textAlignment="CENTER" AnchorPane.leftAnchor="153.0" AnchorPane.rightAnchor="152.0">
+            <Label alignment="CENTER" layoutX="144.0" layoutY="14.0" text="𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓣𝓸" textAlignment="CENTER" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="161.0">
                <font>
                   <Font name="System Bold Italic" size="40.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="134.0" layoutY="82.0" prefHeight="49.0" prefWidth="260.0" text="𝓙𝓸𝓾𝓻𝓷𝓮𝔂𝓜𝓪𝓽𝓮" textAlignment="CENTER" AnchorPane.leftAnchor="134.0" AnchorPane.rightAnchor="133.0">
+            <Label alignment="CENTER" layoutX="135.0" layoutY="82.0" prefHeight="49.0" prefWidth="260.0" text="𝓙𝓸𝓾𝓻𝓷𝓮𝔂𝓜𝓪𝓽𝓮" textAlignment="CENTER" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="132.0">
                <font>
-                  <Font name="System Bold Italic" size="40.0" />
+                  <Font name="Jamrul" size="40.0" />
                </font>
             </Label>
             <Label alignment="CENTER" layoutX="198.0" layoutY="180.0" text="𝑺𝒆𝒄𝒖𝒓𝒆 𝑳𝒐𝒈𝒊𝒏" textAlignment="CENTER">
@@ -46,17 +46,17 @@
             </Label>
             <TextField layoutX="183.0" layoutY="303.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
             <PasswordField layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <Button alignment="CENTER" layoutX="234.0" layoutY="410.0" mnemonicParsing="false" onAction="#clickSignIn" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" layoutX="244.0" layoutY="420.0" mnemonicParsing="false" onAction="#clickSignIn" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" layoutX="230.0" layoutY="522.0" mnemonicParsing="false" onAction="#clickSignUp" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑼𝒑" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" layoutX="242.0" layoutY="520.0" mnemonicParsing="false" onAction="#clickSignUp" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑼𝒑" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="186.0" layoutY="477.0" text=" 𝑫𝒐𝒏'𝒕 𝒉𝒂𝒗𝒆 𝒂𝒏 𝒂𝒄𝒄𝒐𝒖𝒏𝒕?" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="192.0" layoutY="476.0" text=" 𝑫𝒐𝒏'𝒕 𝒉𝒂𝒗𝒆 𝒂𝒏 𝒂𝒄𝒄𝒐𝒖𝒏𝒕?" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>

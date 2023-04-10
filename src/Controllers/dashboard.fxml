@@ -84,6 +84,11 @@
                   <Font name="System Bold Italic" size="35.0" />
                </font>
             </Label>
+            <Button alignment="CENTER" layoutX="898.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickBackButton" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Back" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="34.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </top>
