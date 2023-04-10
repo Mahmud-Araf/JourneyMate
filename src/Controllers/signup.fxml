@@ -14,7 +14,7 @@
    <right>
       <AnchorPane prefHeight="600.0" prefWidth="543.0" style="-fx-background-color: #e36212;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="60.0" layoutY="312.0" text="𝑵𝒂𝒎𝒆:">
+            <Label layoutX="60.0" layoutY="260.0" text="𝑵𝒂𝒎𝒆:">
                <font>
                   <Font size="25.0" />
                </font>
@@ -24,19 +24,19 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField layoutX="183.0" layoutY="315.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <PasswordField layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <Button alignment="CENTER" layoutX="240.0" layoutY="435.0" mnemonicParsing="false" onAction="#clickSignUp" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="emailTextField" layoutX="183.0" layoutY="315.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <PasswordField fx:id="passwordTextField" layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <Button alignment="CENTER" layoutX="240.0" layoutY="435.0" mnemonicParsing="false" onAction="#clickSignInFromSignUP" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Label layoutX="59.0" layoutY="257.0" text="𝑬𝒎𝒂𝒊𝒍:">
+            <Label layoutX="59.0" layoutY="312.0" text="𝑬𝒎𝒂𝒊𝒍:">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField layoutX="183.0" layoutY="260.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <TextField fx:id="nameTextField" layoutX="184.0" layoutY="263.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
             <Label layoutX="227.0" layoutY="149.0" text="𝑺𝒊𝒈𝒏 𝑼𝒑">
                <font>
                   <Font size="40.0" />
