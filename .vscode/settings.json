@@ -1,4 +1,5 @@
 {
+    //Araf
     "java.classPath": [
         "lib/**/*.jar",
         "/usr/share/openjfx/lib/javafx.web.jar",
@@ -8,6 +9,7 @@
         "/usr/share/openjfx/lib/javafx.fxml.jar",
         "/usr/share/openjfx/lib/javafx.controls.jar",
         "/usr/share/openjfx/lib/javafx.base.jar"
+        
     ],
     "java.project.sourcePaths": [
         "src"
@@ -23,5 +25,5 @@
         "/usr/share/openjfx/lib/javafx.controls.jar",
         "/usr/share/openjfx/lib/javafx.base.jar"
     ],
-    "java.debug.settings.onBuildFailureProceed": true,
+    "java.debug.settings.onBuildFailureProceed": true
 }
