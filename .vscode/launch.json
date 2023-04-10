@@ -7,14 +7,14 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
-            "vmArgs": "--module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.graphics,javafx.fxml",
+            "vmArgs": "--module-path /usr/share/javafx20/lib --add-modules javafx.controls,javafx.graphics,javafx.fxml",
             "projectName": "JourneyMate_818d93e8"
         },
         {
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "vmArgs": "--module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.graphics,javafx.fxml -cp /home/araf/Projects/JourneyMate/lib/mysql-connector-j-8.0.32.jar",
+            "vmArgs": "--module-path /usr/share/javafx20/lib --add-modules javafx.controls,javafx.graphics,javafx.fxml -cp /home/araf/Projects/JourneyMate/lib/mysql-connector-j-8.0.32.jar",
             "mainClass": "${file}"
         }
     ]

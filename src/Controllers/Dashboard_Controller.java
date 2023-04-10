@@ -9,17 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
-public class Dashboard_Controller implements Initializable{
+public class Dashboard_Controller extends Basic_Controller implements Initializable{
 
     @FXML
     private Button AboutButton;
@@ -114,11 +110,7 @@ public class Dashboard_Controller implements Initializable{
 
     public void clickBackButton(ActionEvent event)throws IOException
     {
-        BorderPane root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
+        changeScene("login.fxml", event);
     }
 
     
