@@ -22,7 +22,8 @@ public class Login_Controller extends Basic_Controller {
     private TextField passwordTextField;
 
     public void clickSignUp(ActionEvent event) throws IOException {
-        changeScene("signup.fxml", event);
+
+        changeScene("signup.fxml", event,"Sign Up");
     }
 
     public void clickSignIn(ActionEvent event){
@@ -70,7 +71,7 @@ public class Login_Controller extends Basic_Controller {
                     userInsert.setString(3, Password);
                     userInsert.executeUpdate();
                     try {
-                        changeScene("login.fxml",event);
+                        changeScene("login.fxml",event,"Sign In");
                     } catch (Exception e) {
                        e.printStackTrace();
                     }
@@ -146,7 +147,7 @@ public class Login_Controller extends Basic_Controller {
                     if(findPassword.equals(Password))
                     {
                         try {
-                        changeScene("dashboard.fxml", event);   
+                        changeScene("dashboard.fxml", event,"Main Menu");   
                         } catch (Exception e) {
                            e.printStackTrace();
                         }

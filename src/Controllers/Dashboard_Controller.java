@@ -110,7 +110,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
 
     public void clickBackButton(ActionEvent event)throws IOException
     {
-        changeScene("login.fxml", event);
+        changeScene("login.fxml", event,"JourneyMate");
     }
 
     

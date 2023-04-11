@@ -11,6 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         BorderPane root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        primaryStage.setTitle("JourneyMate");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
