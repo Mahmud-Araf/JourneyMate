@@ -2,17 +2,24 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+import Classes.User;
 
 
 public class Dashboard_Controller extends Basic_Controller implements Initializable{
@@ -34,43 +41,51 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     @FXML
     private AnchorPane ContentPane;
 
+    @FXML
+    private Label nameLabel;
+    @FXML
+    private Label emailLabel;
+    @FXML
+    private Label passwordLabel;
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-       
+
         
+        // System.out.println(nameLabel.getText()+" "+emailLabel.getText()+passwordLabel.getText());
         
-        DashboardImg.setOnMouseClicked(event->
+        if(DashboardImg!=null)
         {
- 
-            if(SidebarPane.isVisible()==false)
-            {   
-                SidebarPane.setVisible(true);
-              
-                FadeTransition ft=new FadeTransition(Duration.seconds(0.5),SidebarPane);
-                ft.setFromValue(0);
-                ft.setToValue(1);
-                ft.play();
-
-                TranslateTransition tt= new TranslateTransition(Duration.seconds(0.5),SidebarPane);
-                tt.setByX(+200);
-                tt.play();
-                
-            }
-            else
-            {   
-                
-                FadeTransition ft=new FadeTransition(Duration.seconds(0.5),SidebarPane);
-                ft.setFromValue(1);
-                ft.setToValue(0);
-                ft.play();
-
-                TranslateTransition tt= new TranslateTransition(Duration.seconds(0.5),SidebarPane);
-                tt.setByX(-200);
-                tt.play();
-                
-                SidebarPane.setVisible(false);
-            }
-        });
+            DashboardImg.setOnMouseClicked(event -> {
+            
+                if (!SidebarPane.isVisible()) {
+                    SidebarPane.setVisible(true);
+            
+                    FadeTransition ft = new FadeTransition(Duration.seconds(0.5), SidebarPane);
+                    ft.setFromValue(0);
+                    ft.setToValue(1);
+            
+                    TranslateTransition tt = new TranslateTransition(Duration.seconds(0.5), SidebarPane);
+                    tt.setToX(0);
+            
+                    ParallelTransition pt = new ParallelTransition(ft, tt);
+                    pt.play();
+                } 
+                else {
+                    FadeTransition ft = new FadeTransition(Duration.seconds(0.5), SidebarPane);
+                    ft.setFromValue(1);
+                    ft.setToValue(0);
+            
+                    TranslateTransition tt = new TranslateTransition(Duration.seconds(0.5), SidebarPane);
+                    tt.setToX(-200);
+            
+                    ParallelTransition pt = new ParallelTransition(ft, tt);
+                    pt.setOnFinished(e -> SidebarPane.setVisible(false));
+                    pt.play();
+                }
+            });
+        }
+        
     }
 
     public void clickAboutButton (ActionEvent event) throws IOException
@@ -87,9 +102,21 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
-    public void clickProfileButton(ActionEvent event)
+    public void clickProfileButton(ActionEvent event) throws IOException
     {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("profile.fxml"));
+        AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
+        ContentPane.getChildren().setAll(newPane);
+
+        nameLabel = (Label) newPane.lookup("#nameLabel");
+        emailLabel = (Label) newPane.lookup("#emailLabel");
+        passwordLabel = (Label) newPane.lookup("#passwordLabel");
+
+        nameLabel.setText(User.Name);
+        emailLabel.setText(User.Email);
+        passwordLabel.setText(User.Password);
+
         AboutButton.setStyle("-fx-background-color: #e36212 ;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
         ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
@@ -128,6 +155,51 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     public void clickBackButton(ActionEvent event)throws IOException
     {
         changeScene("login.fxml", event,"JourneyMate");
+    }
+
+    public void clickSignOut(ActionEvent event)throws IOException
+    {
+        changeScene("login.fxml", event,"Sign In");
+    }
+
+    public void deleteUser(ActionEvent event)
+    {
+       Connection connection = null;
+       PreparedStatement preparedStatement=null;
+       try {
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JourneyMate","araf", "password");
+        preparedStatement=connection.prepareStatement("Delete FROM Users WHERE Name = ?");
+        preparedStatement.setString(1,User.Name);
+        preparedStatement.executeUpdate();
+        
+        try {
+        changeScene("signup.fxml", event,"Sign Up");   
+        } catch (Exception e) {
+           e.printStackTrace();
+        }        
+       } catch ( SQLException e) {
+            e.printStackTrace();
+       }
+       finally
+       {
+         if(preparedStatement!=null)
+         {
+            try {
+                preparedStatement.close();
+            } catch (Exception e) {
+               e.printStackTrace();
+            }
+         }
+
+         if(connection!=null)
+         {
+            try {
+                connection.close();
+            } catch (Exception e) {
+              e.printStackTrace();
+            }
+         }
+       }
     }
 
     

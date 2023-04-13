@@ -1,0 +1,6 @@
+/* csslint unknown background-color:false */
+
+.button:hover {
+    -fx-background-color: #ffffff !important;
+    -fx-text-fill: black;
+}
