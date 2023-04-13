@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
+   <children>
+      <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;" stylesheets="@ButtonUtils.css">
+         <children>
+            <Label alignment="CENTER" layoutX="398.0" layoutY="53.0" text="𝑼𝒔𝒆𝒓 𝑰𝒏𝒇𝒐" textAlignment="CENTER">
+               <font>
+                  <Font name="Garuda" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="215.0" layoutY="220.0" text="𝐍𝐚𝐦𝐞:">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="215.0" layoutY="310.0" text="𝐄𝐦𝐚𝐢𝐥:">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="215.0" layoutY="400.0" text="𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝:">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameLabel" layoutX="426.0" layoutY="220.0" text="Label">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabel" layoutX="426.0" layoutY="310.0" text="Label">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordLabel" layoutX="426.0" layoutY="400.0" text="Label">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Button layoutX="34.0" layoutY="597.0" mnemonicParsing="false" onAction="#deleteUser" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Profile" textFill="WHITE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Button>
+            <Button layoutX="738.0" layoutY="597.0" mnemonicParsing="false" onAction="#clickSignOut" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Sign Out" textFill="WHITE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

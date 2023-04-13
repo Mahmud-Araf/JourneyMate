@@ -1,24 +1,33 @@
 package Classes;
 
+// eslint-disable-next-line no-unused-vars
+
 public class User {
 
-    private String Name,Email,Password;
+    public static String Name,Email,Password; 
+
+    public User()
+    {
+        User.Name=null;
+        User.Email=null;
+        User.Password=null;
+    }
 
     public User(String Name, String Email, String Password)
     {
-        this.Name=Name;
-        this.Email=Email;
-        this.Password = Password;
+        User.Name=Name;
+        User.Email=Email;
+        User.Password = Password;
     }
 
-    public void setInfo(String Name, String Email, String Password)
+    public static void setInfo(String Name, String Email, String Password)
     {
-        this.Name=Name;
-        this.Email=Email;
-        this.Password = Password;
+        User.Name=Name;
+        User.Email=Email;
+        User.Password = Password;
     }
 
-    public User getInfo() {
+    public  User getInfo() {
         return this;
     }
 
