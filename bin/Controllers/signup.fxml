@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
    <right>
       <AnchorPane prefHeight="600.0" prefWidth="543.0" style="-fx-background-color: #e36212;" BorderPane.alignment="CENTER">
          <children>
@@ -24,11 +24,11 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="emailTextField" layoutX="183.0" layoutY="315.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <PasswordField fx:id="passwordTextField" layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <Button alignment="CENTER" layoutX="240.0" layoutY="435.0" mnemonicParsing="false" onAction="#clickSignInFromSignUP" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="emailTextField" layoutX="183.0" layoutY="315.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" />
+            <PasswordField fx:id="passwordTextField" layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" />
+            <Button alignment="CENTER" layoutX="211.0" layoutY="476.0" mnemonicParsing="false" onAction="#clickSignInFromSignUP" prefHeight="68.0" prefWidth="171.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="25.0" />
+                  <Font size="35.0" />
                </font>
             </Button>
             <Label layoutX="59.0" layoutY="312.0" text="𝑬𝒎𝒂𝒊𝒍:">
@@ -36,16 +36,21 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="nameTextField" layoutX="184.0" layoutY="263.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <Label layoutX="227.0" layoutY="149.0" text="𝑺𝒊𝒈𝒏 𝑼𝒑">
+            <TextField fx:id="nameTextField" layoutX="184.0" layoutY="263.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" />
+            <Label layoutX="210.0" layoutY="149.0" prefHeight="49.0" prefWidth="172.0" text="𝑺𝒊𝒈𝒏 𝑼𝒑">
                <font>
-                  <Font size="40.0" />
+                  <Font size="45.0" />
                </font>
             </Label>
+            <Button alignment="CENTER" layoutX="409.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickBackButton" prefHeight="67.0" prefWidth="123.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Back" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
    </right>
    <left>
-      <ImageView fitHeight="604.0" fitWidth="458.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="802.0" fitWidth="658.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../img/road.jpg" />
          </image>

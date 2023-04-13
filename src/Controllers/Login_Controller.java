@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 
 
@@ -35,6 +36,11 @@ public class Login_Controller extends Basic_Controller {
         SignUpUser(event,nameTextField.getText(),emailTextField.getText(),passwordTextField.getText());
     }
 
+    public void clickBackButton(ActionEvent event)throws IOException
+    {
+        changeScene("login.fxml", event,"JourneyMate");
+    }
+
     public static void SignUpUser(ActionEvent event,String Name,String Email,String Password) 
     {
         Connection connection = null;
@@ -53,6 +59,8 @@ public class Login_Controller extends Basic_Controller {
             {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Provide all necessary information");
+                DialogPane dialogpane =alert.getDialogPane();
+                dialogpane.setStyle("-fx-background-color:#e36212;");
                 alert.show();
             }
             else
@@ -61,6 +69,8 @@ public class Login_Controller extends Basic_Controller {
                 {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("User already exists");
+                    DialogPane dialogpane =alert.getDialogPane();
+                    dialogpane.setStyle("-fx-background-color:#e36212;");
                     alert.show();
                 }
                 else
@@ -136,6 +146,8 @@ public class Login_Controller extends Basic_Controller {
             {
                 Alert alert= new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Name for User");
+                DialogPane dialogpane =alert.getDialogPane();
+                dialogpane.setStyle("-fx-background-color:#e36212;");
                 alert.show();
             }
             else
@@ -156,6 +168,8 @@ public class Login_Controller extends Basic_Controller {
                     {
                         Alert alert =new Alert(Alert.AlertType.ERROR);
                         alert.setContentText("Invaild Passord");
+                        DialogPane dialogpane =alert.getDialogPane();
+                        dialogpane.setStyle("-fx-background-color:#e36212;");
                         alert.show();
                     }
                 }

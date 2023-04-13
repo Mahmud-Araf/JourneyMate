@@ -10,53 +10,53 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
    <right>
       <AnchorPane prefHeight="600.0" prefWidth="543.0" style="-fx-background-color: #e36212;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="144.0" layoutY="14.0" text="𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓣𝓸" textAlignment="CENTER" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="161.0">
+            <Label alignment="CENTER" layoutX="126.0" layoutY="14.0" prefHeight="61.0" prefWidth="289.0" text="𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓣𝓸" textAlignment="CENTER" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="126.0">
                <font>
-                  <Font name="System Bold Italic" size="40.0" />
+                  <Font name="System Bold Italic" size="50.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="135.0" layoutY="82.0" prefHeight="49.0" prefWidth="260.0" text="𝓙𝓸𝓾𝓻𝓷𝓮𝔂𝓜𝓪𝓽𝓮" textAlignment="CENTER" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="132.0">
+            <Label alignment="CENTER" layoutX="114.0" layoutY="82.0" prefHeight="79.0" prefWidth="313.0" text="𝓙𝓸𝓾𝓻𝓷𝓮𝔂𝓜𝓪𝓽𝓮" textAlignment="CENTER" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="114.0">
                <font>
-                  <Font name="Jamrul" size="40.0" />
+                  <Font name="Jamrul" size="50.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="198.0" layoutY="180.0" text="𝑺𝒆𝒄𝒖𝒓𝒆 𝑳𝒐𝒈𝒊𝒏" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="183.0" layoutY="255.0" text="𝑺𝒆𝒄𝒖𝒓𝒆 𝑳𝒐𝒈𝒊𝒏" textAlignment="CENTER">
                <font>
-                  <Font size="35.0" />
+                  <Font size="45.0" />
                </font>
             </Label>
-            <ImageView fitHeight="66.0" fitWidth="77.0" layoutX="120.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="66.0" fitWidth="77.0" layoutX="97.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/lock.png" />
                </image>
             </ImageView>
-            <Label layoutX="60.0" layoutY="300.0" text="𝑵𝒂𝒎𝒆:">
+            <Label layoutX="60.0" layoutY="377.0" text="𝑵𝒂𝒎𝒆:">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="41.0" layoutY="357.0" text="𝑷𝒂𝒔𝒔𝒘𝒐𝒓𝒅:">
+            <Label layoutX="41.0" layoutY="426.0" text="𝑷𝒂𝒔𝒔𝒘𝒐𝒓𝒅:">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="nameTextField" layoutX="183.0" layoutY="303.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <PasswordField fx:id="passwordTextField" layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
-            <Button alignment="CENTER" layoutX="244.0" layoutY="420.0" mnemonicParsing="false" onAction="#clickSignIn" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="nameTextField" layoutX="183.0" layoutY="379.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <PasswordField fx:id="passwordTextField" layoutX="183.0" layoutY="428.0" prefHeight="24.0" prefWidth="226.0" style="-fx-background-radius: 50;" />
+            <Button alignment="CENTER" layoutX="227.0" layoutY="500.0" mnemonicParsing="false" onAction="#clickSignIn" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" layoutX="242.0" layoutY="520.0" mnemonicParsing="false" onAction="#clickSignUp" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑼𝒑" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" layoutX="221.0" layoutY="642.0" mnemonicParsing="false" onAction="#clickSignUp" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑼𝒑" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="25.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="192.0" layoutY="476.0" text=" 𝑫𝒐𝒏'𝒕 𝒉𝒂𝒗𝒆 𝒂𝒏 𝒂𝒄𝒄𝒐𝒖𝒏𝒕?" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="192.0" layoutY="588.0" text=" 𝑫𝒐𝒏'𝒕 𝒉𝒂𝒗𝒆 𝒂𝒏 𝒂𝒄𝒄𝒐𝒖𝒏𝒕?" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
@@ -64,7 +64,7 @@
          </children></AnchorPane>
    </right>
    <left>
-      <ImageView fitHeight="604.0" fitWidth="458.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="801.0" fitWidth="659.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
          <image>
             <Image url="@img/road.jpg" />
          </image>
