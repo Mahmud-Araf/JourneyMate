@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
-import Classes.User;
 
 
 public class Login_Controller extends Basic_Controller {
@@ -153,15 +153,12 @@ public class Login_Controller extends Basic_Controller {
             else
             {
                 while(resultSet.next())
-                {   
-                    String findName=resultSet.getString("Name");
-                    String findEmail=resultSet.getString("Email");
+                {
                     String findPassword=resultSet.getString("Password");
 
                     if(findPassword.equals(Password))
                     {
                         try {
-                        User.setInfo(findName, findEmail, findPassword);
                         changeScene("dashboard.fxml", event,"Main Menu");   
                         } catch (Exception e) {
                            e.printStackTrace();
