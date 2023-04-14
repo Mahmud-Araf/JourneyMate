@@ -51,8 +51,8 @@ public class Login_Controller extends Basic_Controller {
         try {
 
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JourneyMate","araf", "password");
-            checkUserExists = connection.prepareStatement("SELECT * FROM Users WHERE Email = ?");
-            checkUserExists.setString(1,Email);
+            checkUserExists = connection.prepareStatement("SELECT * FROM Users WHERE Name = ?");
+            checkUserExists.setString(1,Name);
             resultSet=checkUserExists.executeQuery();
 
             if(Name.isEmpty()||Email.isEmpty()||Password.isEmpty())
