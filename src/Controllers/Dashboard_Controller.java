@@ -2,9 +2,6 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
@@ -162,15 +159,16 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         changeScene("login.fxml", event,"Sign In");
     }
 
-    public void deleteUser(ActionEvent event)
+    
+    @Override
+    public  void deleteAction(ActionEvent event)
     {
-       Connection connection = null;
-       PreparedStatement preparedStatement=null;
+       startDB();
        try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JourneyMate","araf", "password");
-        preparedStatement=connection.prepareStatement("Delete FROM Users WHERE Name = ?");
-        preparedStatement.setString(1,User.Name);
-        preparedStatement.executeUpdate();
+        setConnection();
+        preparedStatement1=connection.prepareStatement("Delete FROM Users WHERE Name = ?");
+        preparedStatement1.setString(1,User.Name);
+        preparedStatement1.executeUpdate();
         
         try {
         changeScene("signup.fxml", event,"Sign Up");   
@@ -182,24 +180,9 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
        }
        finally
        {
-         if(preparedStatement!=null)
-         {
-            try {
-                preparedStatement.close();
-            } catch (Exception e) {
-               e.printStackTrace();
-            }
-         }
-
-         if(connection!=null)
-         {
-            try {
-                connection.close();
-            } catch (Exception e) {
-              e.printStackTrace();
-            }
-         }
+        closeDB();
        }
+         
     }
 
     

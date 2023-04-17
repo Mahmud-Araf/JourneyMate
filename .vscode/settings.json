@@ -41,6 +41,7 @@
         "/usr/share/javafx20/lib/javafx.web.jar",
         "/usr/share/javafx20/lib/javafx-swt.jar"
     ]
+    
     //Shawn
     //  "java.project.referencedLibraries": [
     //     "lib/**/*.jar",

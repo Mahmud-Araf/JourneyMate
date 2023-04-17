@@ -44,7 +44,7 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <Button layoutX="34.0" layoutY="597.0" mnemonicParsing="false" onAction="#deleteUser" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Profile" textFill="WHITE">
+            <Button layoutX="34.0" layoutY="597.0" mnemonicParsing="false" onAction="#deleteAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Profile" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
