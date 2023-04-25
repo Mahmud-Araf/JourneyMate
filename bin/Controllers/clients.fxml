@@ -10,7 +10,7 @@
    <children>
       <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;" stylesheets="@ButtonUtils.css">
          <children>
-            <Button layoutX="606.0" layoutY="270.0" mnemonicParsing="false" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Add Client" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="606.0" layoutY="270.0" mnemonicParsing="false" onAction="#addAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Add Client" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>

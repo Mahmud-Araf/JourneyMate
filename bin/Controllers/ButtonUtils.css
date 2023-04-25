@@ -1,6 +1,15 @@
 /* csslint unknown background-color:false */
 
 .button:hover {
+     background-color: #ffffff;
     -fx-background-color: #ffffff !important;
     -fx-text-fill: black;
+}
+
+.button_background
+{
+     background-color: #ffffff;
+    -fx-background-color: #000000 !important;
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-background-radius:50;
 }

@@ -164,14 +164,19 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         BookingButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
     }
 
-    public void clickBackButton(ActionEvent event)throws IOException
+    @Override
+    public void clickBackButton(ActionEvent event)
     {
-        changeScene("login.fxml", event,"JourneyMate");
+        try {
+        changeScenewithBorderPane("login.fxml", event,"JourneyMate");
+        } catch (IOException e) {
+           e.printStackTrace();
+        }
     }
 
     public void clickSignOut(ActionEvent event)throws IOException
     {
-        changeScene("login.fxml", event,"Sign In");
+        changeScenewithBorderPane("login.fxml", event,"Sign In");
     }
 
     
@@ -186,7 +191,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         preparedStatement1.executeUpdate();
         
         try {
-        changeScene("signup.fxml", event,"Sign Up");   
+        changeScenewithBorderPane("signup.fxml", event,"Sign Up");   
         } catch (Exception e) {
            e.printStackTrace();
         }        
