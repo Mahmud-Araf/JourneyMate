@@ -12,18 +12,6 @@
         "/usr/share/javafx20/lib/javafx-swt.jar"
     ],
 
-    //Shawn
-    // "java.classPath": [
-    //     "lib/**/*.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.base.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.controls.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.fxml.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.graphics.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.media.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.swing.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.web.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx-swt.jar"
-    // ],
     "java.project.sourcePaths": [
         "src"
     ],
@@ -42,16 +30,4 @@
         "/usr/share/javafx20/lib/javafx-swt.jar"
     ]
     
-    //Shawn
-    //  "java.project.referencedLibraries": [
-    //     "lib/**/*.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.base.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.controls.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.fxml.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.graphics.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.media.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.swing.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.web.jar",
-    //     "C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx-swt.jar"
-    // ]
 }

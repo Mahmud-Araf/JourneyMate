@@ -89,10 +89,27 @@ public class Basic_Controller
         }
     }
 
+    protected void addAction(ActionEvent event)
+    {
+        System.out.println("Override this function for add operation");
+    }
+
+    protected void modifyAction(ActionEvent event)
+    {
+        System.out.println("Override this function for modify operation");
+    }
+
     protected void deleteAction(ActionEvent event)
     {
         System.out.println("Override this function for delete operation");
-    };
+    }
+
+    protected void showTable(ActionEvent event)
+    {
+        System.out.println("Override this function for table showing");
+    }
+
+
     
     
 }
