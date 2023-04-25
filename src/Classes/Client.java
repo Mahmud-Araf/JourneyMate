@@ -1,9 +1,11 @@
 package Classes;
 
-// eslint-disable-next-line no-unused-vars
+
+@SuppressWarnings("unused")
 
 public class Client {
 
+   
    private String Name;
    private String Address;
    private String MobileNumber;
