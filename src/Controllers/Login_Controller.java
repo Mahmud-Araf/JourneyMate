@@ -20,7 +20,7 @@ public class Login_Controller extends Basic_Controller {
 
     public void clickSignUp(ActionEvent event) throws IOException {
 
-        changeScene("signup.fxml", event,"Sign Up");
+        changeScenewithBorderPane("signup.fxml", event,"Sign Up");
     }
 
     public void clickSignIn(ActionEvent event){
@@ -32,9 +32,14 @@ public class Login_Controller extends Basic_Controller {
         SignUpUser(event,nameTextField.getText(),emailTextField.getText(),passwordTextField.getText());
     }
 
-    public void clickBackButton(ActionEvent event)throws IOException
+    @Override
+    public void clickBackButton(ActionEvent event)
     {
-        changeScene("login.fxml", event,"JourneyMate");
+        try {
+        changeScenewithBorderPane("login.fxml", event,"JourneyMate");    
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void SignUpUser(ActionEvent event,String Name,String Email,String Password) 
@@ -74,7 +79,7 @@ public class Login_Controller extends Basic_Controller {
                     preparedStatement1.setString(3, Password);
                     preparedStatement1.executeUpdate();
                     try {
-                        changeScene("login.fxml",event,"Sign In");
+                        changeScenewithBorderPane("login.fxml",event,"Sign In");
                     } catch (Exception e) {
                        e.printStackTrace();
                     }
@@ -121,7 +126,7 @@ public class Login_Controller extends Basic_Controller {
                     {
                         try {
                         User.setInfo(findName, findEmail, findPassword);
-                        changeScene("dashboard.fxml", event,"Main Menu");   
+                        changeScenewithBorderPane("dashboard.fxml", event,"Main Menu");   
                         } catch (Exception e) {
                            e.printStackTrace();
                         }

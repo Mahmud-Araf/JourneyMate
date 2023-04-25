@@ -1,0 +1,15 @@
+/* csslint unknown background-color:false */
+
+.primary_color
+{
+     background-color: #e36212;
+    -fx-background-color : #e36212;
+}
+
+.label_background
+{
+     background-color: black;
+    -fx-background-color : rgb(0, 0, 0);
+    -fx-text-fill : White;
+    -fx-background-radius : 25;
+}

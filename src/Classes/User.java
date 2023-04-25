@@ -1,7 +1,5 @@
 package Classes;
 
-// eslint-disable-next-line no-unused-vars
-
 public class User {
 
     public static String Name,Email,Password; 
