@@ -1,45 +1,50 @@
 package Classes;
 
 
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
 
 public class Client {
 
    
-   private String Name;
-   private String Address;
-   private String MobileNumber;
-   public static int ClientsNumber;
+   private  String Name;
+   private  String MobileNumber;
+   private  String Address;
 
-   public Client(String Name,String MobileNumber,String Address) {
-      this.Name = Name;
-      this.Address = Address;
-      this.MobileNumber = MobileNumber;
-   }
-   
-   public void set(String Name,String MobileNumber,String Address) {
-      this.Name = Name;
-      this.Address = Address;
-      this.MobileNumber = MobileNumber;
-   }
-
-   public void setName(String Name)
+   public Client(String Name,String MobileNumber,String Address)
    {
-      this.Name = Name;
+      this.Name=Name;
+      this.MobileNumber=MobileNumber;
+      this.Address =Address;
    }
 
-   public void setMobileNumber(String MobileNumber)
+   public   void setName(String name)
    {
-      this.MobileNumber = MobileNumber;
+      Name = name;
    }
 
-   public void setAddress(String Address)
+   public  void setMobileNumber(String mobileNumber)
    {
-      this.Address = Address;
+      MobileNumber = mobileNumber;
    }
 
-   public Client getInfo()
+   public  void setAddress(String address)
    {
-      return this;
+      Address = address;
    }
+
+   public  String getName()
+   {
+      return Name;
+   }
+
+   public  String getMobileNumber()
+   {
+      return MobileNumber;
+   }
+
+   public  String getAddress()
+   {
+      return Address;
+   }
+
 }

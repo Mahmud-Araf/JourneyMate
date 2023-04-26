@@ -101,6 +101,7 @@ public class Login_Controller extends Basic_Controller {
         startDB();
 
         try {
+            
             setConnection();
             preparedStatement1 = connection.prepareStatement("SELECT * FROM Users WHERE Name = ?");
             preparedStatement1.setString(1,Name);

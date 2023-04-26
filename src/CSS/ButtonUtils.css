@@ -1,10 +1,12 @@
-/* csslint unknown background-color:false */
 
-.button:hover {
+
+.button:hover ,.button:focused{
      background-color: #ffffff;
     -fx-background-color: #ffffff !important;
     -fx-text-fill: black;
 }
+
+
 
 .button_background
 {

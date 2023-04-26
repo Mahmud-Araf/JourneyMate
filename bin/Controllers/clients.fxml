@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientScreen_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" stylesheets="@../CSS/ButtonUtils.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientScreen_Controller">
    <children>
-      <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;" stylesheets="@ButtonUtils.css">
+      <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;">
          <children>
             <Button layoutX="606.0" layoutY="270.0" mnemonicParsing="false" onAction="#addAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Add Client" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
             </Button>
-            <Button layoutX="536.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Show Clients Info" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="536.0" layoutY="120.0" mnemonicParsing="false" onAction="#showTable" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Show Clients Info" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
             </Button>
-            <Button layoutX="580.0" layoutY="570.0" mnemonicParsing="false" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Client" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="DelButton" layoutX="580.0" layoutY="570.0" mnemonicParsing="false" onAction="#deleteAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Client" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
@@ -36,7 +37,7 @@
                   <Font name="Monospaced Bold Italic" size="96.0" />
                </font>
             </Label>
-            <Button layoutX="572.0" layoutY="420.0" mnemonicParsing="false" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Update Client" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="524.0" layoutY="420.0" mnemonicParsing="false" onAction="#modifyAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Change Client Info" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
@@ -44,4 +45,8 @@
          </children>
       </AnchorPane>
    </children>
+   <styleClass>
+      <String fx:value="button" />
+      <String fx:value="button_background" />
+   </styleClass>
 </AnchorPane>
