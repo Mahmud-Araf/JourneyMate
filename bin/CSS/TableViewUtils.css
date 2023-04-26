@@ -1,0 +1,29 @@
+.table-row-cell:even {
+    background-color: white;
+    -fx-background-color: White;
+}
+
+.table-row-cell:odd {
+    background-color: #e36212;
+    -fx-background-color: #e36212;
+}
+
+.table-view .column-header {
+    background-color: black;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-cell {
+    border-color: rgb(0, 0, 0);
+    -fx-border-color: rgb(0, 0, 0);
+}
+
+.table-row-cell {
+    font-weight: bold;
+    -fx-font-weight: bold;
+}

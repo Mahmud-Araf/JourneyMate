@@ -12,47 +12,37 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientScreen_Controller">
    <children>
-      <ImageView fitHeight="192.0" fitWidth="234.0" layoutX="304.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="223.0" fitWidth="309.0" layoutX="181.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/addclient.png" />
+            <Image url="@../img/changeclient.png" />
          </image>
       </ImageView>
-      <Label layoutX="504.0" layoutY="93.0" styleClass="label_background" stylesheets="@Backgroundutils.css" text=" Add Client " textFill="WHITE">
+      <Label layoutX="404.0" layoutY="102.0" styleClass="label_background" text="Change Client Info " textFill="WHITE">
          <font>
             <Font name="NimbusMonoPS-Bold" size="70.0" />
          </font>
       </Label>
-      <Label layoutX="326.0" layoutY="312.0" styleClass="label_background" stylesheets="@Backgroundutils.css" text=" Name: ">
+      <Label layoutX="326.0" layoutY="341.0" styleClass="label_background" text=" Name: ">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <TextField fx:id="nameTextField" layoutX="605.0" layoutY="309.0" prefHeight="49.0" prefWidth="337.0">
+      <TextField fx:id="nameTextField" layoutX="600.0" layoutY="338.0" prefHeight="49.0" prefWidth="337.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <Label layoutX="232.0" layoutY="433.0" styleClass="label_background" stylesheets="@Backgroundutils.css" text=" Mobile Number: ">
+      <Label layoutX="305.0" layoutY="476.0" styleClass="label_background" text=" Address: ">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <Label layoutX="304.0" layoutY="554.0" styleClass="label_background" stylesheets="@Backgroundutils.css" text=" Address: ">
-         <font>
-            <Font size="40.0" />
-         </font>
-      </Label>
-      <TextField fx:id="addressTextField" layoutX="605.0" layoutY="551.0" prefHeight="49.0" prefWidth="337.0">
+      <TextField fx:id="addressTextField" layoutX="600.0" layoutY="473.0" prefHeight="49.0" prefWidth="337.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="mobileNumTextField" layoutX="605.0" layoutY="430.0" prefHeight="49.0" prefWidth="337.0">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <Button layoutX="990.0" layoutY="696.0" mnemonicParsing="false" onAction="#addClientToDB" prefHeight="85.0" prefWidth="170.0" text="Add">
+      <Button layoutX="937.0" layoutY="696.0" mnemonicParsing="false" onAction="#modifyClientInfoToDB" prefHeight="85.0" prefWidth="223.0" text="Change">
          <font>
             <Font size="40.0" />
          </font>
@@ -72,7 +62,7 @@
       </Button>
    </children>
    <stylesheets>
-      <URL value="@../CSS/Backgroundutils.css" />
       <URL value="@../CSS/ButtonUtils.css" />
+      <URL value="@../CSS/Backgroundutils.css" />
    </stylesheets>
 </AnchorPane>

@@ -133,8 +133,8 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         ContentPane.getChildren().setAll(newPane);
         MainPane.setStyle("-fx-background-color: #e36212;");
         Label ClientNumber = (Label)newPane.lookup("#ClientNumberLabel");
-        ClientScreen_Controller csc = new ClientScreen_Controller();
-        ClientNumber.setText(csc.getTotalClientNumber(User.Name));
+        
+        ClientNumber.setText(new ClientScreen_Controller().getTotalClientNumber(User.Name));
         AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ClientsButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
