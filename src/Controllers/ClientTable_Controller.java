@@ -11,8 +11,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ClientTable_Controller extends Basic_Controller implements Initializable{
@@ -28,9 +30,28 @@ public class ClientTable_Controller extends Basic_Controller implements Initiali
     
     @FXML
     private TableColumn<Client, String> addressColumn;
+
+    @FXML
+    private ChoiceBox<String> choiceBox;
+
+    @FXML
+    private TextField searchTextField;
+    
+    private boolean isInitialized = false;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
+        if (!isInitialized) {
+            ObservableList<String> items = FXCollections.observableArrayList();
+            items.addAll("None","Name", "MobileNumber", "Address");
+            choiceBox.setItems(items);
+            isInitialized = true;
+        }
+        
         startDB();
+
         try {
             setConnection();
 
