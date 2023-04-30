@@ -20,7 +20,7 @@ import javafx.util.Duration;
 import Classes.User;
 
 
-public class Dashboard_Controller extends Basic_Controller implements Initializable{
+public class Dashboard_Controller extends Basic_Controller implements Initializable, ControllerFunctions{
      
     @FXML
     private Button AboutButton;
@@ -142,10 +142,22 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
-    public void clickPackagesButton(ActionEvent event)
+    public void clickPackagesButton(ActionEvent event) throws IOException
     {   
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("packages.fxml"));
+        AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
-        MainPane.setStyle("-fx-background-color: White;");
+        ContentPane.getChildren().setAll(newPane);
+        MainPane.setStyle("-fx-background-color: #e36212;");
+
+        Label PackageNumber =(Label)newPane.lookup("#PackageNumberLabel");
+        Label SpotNumber =(Label)newPane.lookup("#SpotNumberLabel");
+        Label RangeLabel = (Label)newPane.lookup("#RangeLabel");
+
+        PackageNumber.setText(new PackageScreen_Controller().getTotalNumber("PackageNumber",User.Name));
+        SpotNumber.setText(new PackageScreen_Controller().getTotalNumber("SpotNumber",User.Name));
+        RangeLabel.setText(new PackageScreen_Controller().getPriceRange(User.Name));
+
         AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
@@ -205,5 +217,20 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
          
     }
 
-    
+
+
+    @Override
+    public void addAction(ActionEvent event) {
+        //No needed
+    }
+
+    @Override
+    public void modifyAction(ActionEvent event) {
+        //No needed
+    }
+
+    @Override
+    public void showTable(ActionEvent event) {
+        //No needed
+    }
 }

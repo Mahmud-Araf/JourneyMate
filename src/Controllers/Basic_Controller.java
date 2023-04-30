@@ -31,10 +31,12 @@ public class Basic_Controller
         }
 
         if (stage != null) {
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
             stage.setTitle(title);
             stage.setResizable(false);
             stage.show();
+            scene.getRoot().requestFocus();
         } 
     }
 
@@ -47,27 +49,32 @@ public class Basic_Controller
         }
 
         if (stage != null) {
-            stage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
             stage.setTitle(title);
             stage.setResizable(false);
             stage.show();
+            scene.getRoot().requestFocus();
         } 
     }
 
-    protected void clickBackButton(ActionEvent event)
+    protected  void clickBackButton(ActionEvent event)
     {
-        System.out.println("Override this function for backbutton operation");
-    }
+        System.out.println("Back button clicked");
+    };
+    
 
     protected void startDB()
     {
         connection=null;
-        preparedStatement1=preparedStatement2=null;
-        resultSet=null;
+        preparedStatement1=null;
+        preparedStatement2=null;
+        resultSet=null;  
     }
 
     protected void setConnection() throws SQLException{
-       connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JourneyMate","araf", "password");
+           connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JourneyMate","araf", "password");
     }
 
     protected void closeDB()
@@ -110,27 +117,4 @@ public class Basic_Controller
         }
     }
 
-    protected void addAction(ActionEvent event)
-    {
-        System.out.println("Override this function for add operation");
-    }
-
-    protected void modifyAction(ActionEvent event)
-    {
-        System.out.println("Override this function for modify operation");
-    }
-
-    protected void deleteAction(ActionEvent event)
-    {
-        System.out.println("Override this function for delete operation");
-    }
-
-    protected void showTable(ActionEvent event)
-    {
-        System.out.println("Override this function for table showing");
-    }
-
-
-    
-    
 }

@@ -10,6 +10,13 @@ public class Client {
    private  String MobileNumber;
    private  String Address;
 
+   public Client()
+   {
+      Name=null;
+      MobileNumber=null;
+      Address = null;
+   }
+
    public Client(String Name,String MobileNumber,String Address)
    {
       this.Name=Name;
