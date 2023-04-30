@@ -2,24 +2,6 @@
     
     "version": "0.2.0",
     "configurations": [
-        //Shawn
-        // {
-        //     "type": "java",
-        //     "name": "Main",
-        //     "request": "launch",
-        //     "mainClass": "Main",
-        //     "vmArgs": "--module-path C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib --add-modules javafx.controls,javafx.graphics,javafx.fxml",
-        //     "projectName": "JourneyMate_c0fcd978"
-        // },
-        // {
-        //     "type": "java",
-        //     "name": "Current File",
-        //     "request": "launch",
-        //     "vmArgs": "--module-path C:/Users/ASUS/Downloads/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib --add-modules javafx.controls,javafx.graphics,javafx.fxml",
-        //     "mainClass": "${file}"
-        // },
-        
-        //Araf
         {
             "type": "java",
             "name": "Main",

@@ -1,0 +1,21 @@
+.CheckBox_label {
+    font-size: 20px;
+    -fx-font-size: 20px;
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+.CheckBox
+{
+    background-color: white;
+   -fx-background-color: white;
+   -fx-background-radius: 25px;
+}
+
+.choice-box .menu-item {
+    background-color: #e36212;
+    -fx-background-color: #e36212;
+    border-color: black;
+    -fx-border-color:black;
+}

@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import Classes.User;
 
 
-public class Login_Controller extends Basic_Controller {
+public class Login_Controller extends Basic_Controller  {
 
     @FXML
     private TextField nameTextField;
@@ -150,5 +150,4 @@ public class Login_Controller extends Basic_Controller {
             closeDB();
         }
     }
-
 }

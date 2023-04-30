@@ -17,17 +17,17 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ClientTable_Controller extends Basic_Controller implements Initializable{
+public class ClientTable_Controller extends Basic_Controller implements Initializable  {
 
     @FXML
-    private TableView<Client>clientTable;
-    
+    private TableView<Client> clientTable;
+
     @FXML
     private TableColumn<Client, String> nameColumn;
-    
+
     @FXML
     private TableColumn<Client, String> mobileNumColumn;
-    
+
     @FXML
     private TableColumn<Client, String> addressColumn;
 
@@ -36,20 +36,26 @@ public class ClientTable_Controller extends Basic_Controller implements Initiali
 
     @FXML
     private TextField searchTextField;
-    
-    private boolean isInitialized = false;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
-        if (!isInitialized) {
-            ObservableList<String> items = FXCollections.observableArrayList();
-            items.addAll("None","Name", "MobileNumber", "Address");
-            choiceBox.setItems(items);
-            isInitialized = true;
+        ObservableList<String> items = FXCollections.observableArrayList();
+        items.addAll("None", "Name", "MobileNumber", "Address");
+        choiceBox.setItems(items);
+        choiceBox.setValue("None");
+
+    }
+
+    @Override
+    public void clickBackButton(ActionEvent event) {
+        try {
+            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
+    }
+
+    public void doClientTableQuery(ActionEvent event) {
         startDB();
 
         try {
@@ -57,13 +63,31 @@ public class ClientTable_Controller extends Basic_Controller implements Initiali
 
             ObservableList<Client> clients = FXCollections.observableArrayList();
 
-            preparedStatement1 = connection.prepareStatement("Select * FROM Clients WHERE UserName=?");
-            preparedStatement1.setString(1,User.Name);
+            if (choiceBox.getValue() == "None") {
+                preparedStatement1 = connection.prepareStatement("Select * FROM Clients WHERE UserName=?");
+                preparedStatement1.setString(1, User.Name);
+            } else if (choiceBox.getValue() == "Name") {
+                preparedStatement1 = connection
+                        .prepareStatement("Select * FROM Clients WHERE UserName=? AND ClientName=?");
+                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(2, searchTextField.getText());
+            } else if (choiceBox.getValue() == "MobileNumber") {
+                preparedStatement1 = connection
+                        .prepareStatement("Select * FROM Clients WHERE UserName=? AND MobileNumber=?");
+                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(2, searchTextField.getText());
+            } else {
+                preparedStatement1 = connection
+                        .prepareStatement("Select * FROM Clients WHERE UserName=? AND Address=?");
+                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(2, searchTextField.getText());
+            }
 
-            resultSet=preparedStatement1.executeQuery();
+            resultSet = preparedStatement1.executeQuery();
 
             while (resultSet.next()) {
-                clients.add(new Client(resultSet.getString("ClientName"), resultSet.getString("MobileNumber"), resultSet.getString("Address")));
+                clients.add(new Client(resultSet.getString("ClientName"), resultSet.getString("MobileNumber"),
+                        resultSet.getString("Address")));
             }
 
             nameColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("Name"));
@@ -71,25 +95,16 @@ public class ClientTable_Controller extends Basic_Controller implements Initiali
             addressColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("Address"));
 
             clientTable.setItems(clients);
-        
+
+            searchTextField.setText(null);
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally
-        {
+        } finally {
             closeDB();
         }
     }
 
-    @Override
-    public void clickBackButton(ActionEvent event)
-    {
-        try {
-        changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");    
-        } catch (IOException e) {
-           e.printStackTrace();
-        }
-    }
+
     
 }

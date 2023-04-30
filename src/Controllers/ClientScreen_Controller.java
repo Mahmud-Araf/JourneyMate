@@ -19,7 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ClientScreen_Controller extends Basic_Controller {
+public class ClientScreen_Controller extends Basic_Controller implements ControllerFunctions{
     @FXML
     private Button DelButton;
     @FXML
@@ -34,6 +34,7 @@ public class ClientScreen_Controller extends Basic_Controller {
     private static Client client = new Client(null,null,null);
 
     public String getTotalClientNumber(String UserName) {
+        
         String st = "0";
 
         startDB();
@@ -114,6 +115,38 @@ public class ClientScreen_Controller extends Basic_Controller {
         dialog.show();
     }
 
+    public void deleteClientFromDB(ActionEvent event, String MobileNum) {
+        startDB();
+
+        try {
+            setConnection();
+            preparedStatement1 = connection
+                    .prepareStatement("Delete FROM Clients WHERE UserName = ? AND MobileNumber = ?;");
+            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(2, MobileNum);
+            int roweffected = preparedStatement1.executeUpdate();
+
+            if (roweffected == 0 || MobileNum == null) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Client not found");
+                alert.setContentText("The Client was not found in the database.");
+                DialogPane dialogpane = alert.getDialogPane();
+                dialogpane.setStyle("-fx-background-color:#e36212;");
+                alert.show();
+            }
+
+            closeDB();
+
+            ClientNumberLabel.setText(getTotalClientNumber(User.Name));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeDB();
+        }
+    }
+
     @Override
     public void showTable(ActionEvent event)
     {
@@ -184,35 +217,7 @@ public class ClientScreen_Controller extends Basic_Controller {
         }
     }
 
-    public void deleteClientFromDB(ActionEvent event, String MobileNum) {
-        startDB();
-
-        try {
-            setConnection();
-            preparedStatement1 = connection
-                    .prepareStatement("Delete FROM Clients WHERE UserName = ? AND MobileNumber = ?");
-            preparedStatement1.setString(1, User.Name);
-            preparedStatement1.setString(2, MobileNum);
-            int roweffected = preparedStatement1.executeUpdate();
-
-            if (roweffected == 0 || MobileNum == null) {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Client not found");
-                alert.setContentText("The Client was not found in the database.");
-                DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
-                alert.show();
-            }
-
-            ClientNumberLabel.setText(getTotalClientNumber(User.Name));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            closeDB();
-        }
-    }
+    
 
     public void gotomodifyClientScreen(ActionEvent event, String MobileNum) {
 
