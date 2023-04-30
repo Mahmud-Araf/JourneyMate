@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import Classes.User;
@@ -191,11 +192,11 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                 alert.show();
             }
             
-            closeDB();
+            
             PackageNumberLabel.setText(getTotalNumber("PackageNumber",User.Name));
-            closeDB();
+            
             SpotNumberLabel.setText(getTotalNumber("SpotNumber",User.Name));
-            closeDB();
+            
             RangeLabel.setText(getPriceRange(User.Name));
 
         } catch (SQLException e) {
@@ -213,6 +214,10 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
     @Override
     public void showTable(ActionEvent event) {
         
-        
+        try {
+            changeScenewithAnchorPane("showPackageTable.fxml", event,"Package Details");
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
     }
 }
