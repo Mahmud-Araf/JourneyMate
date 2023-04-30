@@ -68,105 +68,6 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
         }
     }
 
-    @Override
-    public void modifyAction(ActionEvent event) {
-        Alert dialog = new Alert(Alert.AlertType.NONE);
-        dialog.setTitle("Change Client Info");
-        dialog.setHeaderText("Enter Client Mobile Number:");
-        dialog.initOwner((Stage) DelButton.getScene().getWindow());
-
-        TextField textField = new TextField();
-        DialogPane dialogPane = dialog.getDialogPane();
-        dialogPane.setContent(textField);
-        dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
-        dialogPane.setStyle("-fx-background-color:#e36212;");
-
-        dialog.setResultConverter(buttonType -> {
-            if (buttonType == ButtonType.OK) {
-                gotomodifyClientScreen(event, textField.getText());
-            }
-            return null;
-        });
-
-        dialog.show();
-    }
-
-    @Override
-    public void deleteAction(ActionEvent event) {
-
-        Alert dialog = new Alert(Alert.AlertType.NONE);
-        dialog.setTitle("Delete Client");
-        dialog.setHeaderText("Enter Client Mobile Number:");
-        dialog.initOwner((Stage) DelButton.getScene().getWindow());
-
-        TextField textField = new TextField();
-        DialogPane dialogPane = dialog.getDialogPane();
-        dialogPane.setContent(textField);
-        dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
-        dialogPane.setStyle("-fx-background-color:#e36212;");
-
-        dialog.setResultConverter(buttonType -> {
-            if (buttonType == ButtonType.OK) {
-                deleteClientFromDB(event, textField.getText());
-            }
-            return null;
-        });
-
-        dialog.show();
-    }
-
-    public void deleteClientFromDB(ActionEvent event, String MobileNum) {
-        startDB();
-
-        try {
-            setConnection();
-            preparedStatement1 = connection
-                    .prepareStatement("Delete FROM Clients WHERE UserName = ? AND MobileNumber = ?;");
-            preparedStatement1.setString(1, User.Name);
-            preparedStatement1.setString(2, MobileNum);
-            int roweffected = preparedStatement1.executeUpdate();
-
-            if (roweffected == 0 || MobileNum == null) {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Client not found");
-                alert.setContentText("The Client was not found in the database.");
-                DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
-                alert.show();
-            }
-
-            closeDB();
-
-            ClientNumberLabel.setText(getTotalClientNumber(User.Name));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            closeDB();
-        }
-    }
-
-    @Override
-    public void showTable(ActionEvent event)
-    {
-        try {
-          changeScenewithAnchorPane("showClientTable.fxml", event,"Clients Information");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    @Override
-    public void clickBackButton(ActionEvent event) {
-        try {
-            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void addClientToDB(ActionEvent event) {
         startDB();
         String Name = nameTextField.getText();
@@ -217,7 +118,29 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
         }
     }
 
-    
+    @Override
+    public void modifyAction(ActionEvent event) {
+        Alert dialog = new Alert(Alert.AlertType.NONE);
+        dialog.setTitle("Change Client Info");
+        dialog.setHeaderText("Enter Client Mobile Number:");
+        dialog.initOwner((Stage) DelButton.getScene().getWindow());
+
+        TextField textField = new TextField();
+        DialogPane dialogPane = dialog.getDialogPane();
+        dialogPane.setContent(textField);
+        dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
+        dialogPane.setStyle("-fx-background-color:#e36212;");
+
+        dialog.setResultConverter(buttonType -> {
+            if (buttonType == ButtonType.OK) {
+                gotomodifyClientScreen(event, textField.getText());
+            }
+            return null;
+        });
+
+        dialog.show();
+    }
+
 
     public void gotomodifyClientScreen(ActionEvent event, String MobileNum) {
 
@@ -301,6 +224,82 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
             e.printStackTrace();
         } finally {
             closeDB();
+        }
+    }
+
+
+    @Override
+    public void deleteAction(ActionEvent event) {
+
+        Alert dialog = new Alert(Alert.AlertType.NONE);
+        dialog.setTitle("Delete Client");
+        dialog.setHeaderText("Enter Client Mobile Number:");
+        dialog.initOwner((Stage) DelButton.getScene().getWindow());
+
+        TextField textField = new TextField();
+        DialogPane dialogPane = dialog.getDialogPane();
+        dialogPane.setContent(textField);
+        dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
+        dialogPane.setStyle("-fx-background-color:#e36212;");
+
+        dialog.setResultConverter(buttonType -> {
+            if (buttonType == ButtonType.OK) {
+                deleteClientFromDB(event, textField.getText());
+            }
+            return null;
+        });
+
+        dialog.show();
+    }
+
+    public void deleteClientFromDB(ActionEvent event, String MobileNum) {
+        startDB();
+
+        try {
+            setConnection();
+            preparedStatement1 = connection
+                    .prepareStatement("Delete FROM Clients WHERE UserName = ? AND MobileNumber = ?;");
+            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(2, MobileNum);
+            int roweffected = preparedStatement1.executeUpdate();
+
+            if (roweffected == 0 || MobileNum == null) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Client not found");
+                alert.setContentText("The Client was not found in the database.");
+                DialogPane dialogpane = alert.getDialogPane();
+                dialogpane.setStyle("-fx-background-color:#e36212;");
+                alert.show();
+            }
+
+
+            ClientNumberLabel.setText(getTotalClientNumber(User.Name));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeDB();
+        }
+    }
+    
+    @Override
+    public void showTable(ActionEvent event)
+    {
+        try {
+          changeScenewithAnchorPane("showClientTable.fxml", event,"Clients Information");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public void clickBackButton(ActionEvent event) {
+        try {
+            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

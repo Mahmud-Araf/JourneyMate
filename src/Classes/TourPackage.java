@@ -1,5 +1,5 @@
 package Classes;
-import java.util.ArrayList;
+
 
 public class TourPackage {
     
@@ -7,11 +7,11 @@ public class TourPackage {
 
      private String District;
 
-     private ArrayList<String>SpotName;
+     private String SpotName;
 
-     private ArrayList<Integer>SpotPrice;
+     private String SpotPrice;
 
-     private int TotalPrice=0;
+     private String TotalPrice;
 
      public TourPackage()
      {
@@ -19,20 +19,16 @@ public class TourPackage {
         District=null;
         SpotName=null;
         SpotPrice=null;
-        TotalPrice=0;
+        TotalPrice=null;
      }
 
-     public TourPackage(String PackageName,String District, ArrayList<String>SpotName, ArrayList<Integer> SpotPrice)
+     public TourPackage(String PackageName,String District, String SpotName, String SpotPrice, String TotalPrice)
      {
         this.PackageName=PackageName;
         this.District = District;
         this.SpotName =SpotName;
         this.SpotPrice = SpotPrice;
-
-        for(var it:SpotPrice)
-        {
-            TotalPrice+=it;
-        }
+        this.TotalPrice = TotalPrice;
      }
 
      public void setPackageName(String PackageName)
@@ -45,23 +41,19 @@ public class TourPackage {
         this.District = District;
      }
 
-     public void setSpotName(ArrayList<String>SpotName)
+     public void setSpotName(String SpotName)
      {
         this.SpotName = SpotName;
      }
 
-     public void setSpotPrice(ArrayList<Integer>SpotPrice)
+     public void setSpotPrice(String SpotPrice)
      {
         this.SpotPrice = SpotPrice;
      }
 
      public void setTotalPrice()
      {
-        TotalPrice=0;
-        for(var it:SpotPrice)
-        {
-            TotalPrice+=it;
-        }
+        TotalPrice="0";
      }
 
      public String getPackageName()
@@ -74,17 +66,17 @@ public class TourPackage {
         return District;
      }
 
-     public ArrayList<String> getSpotName()
+     public String  getSpotName()
      {
         return SpotName;
      }
 
-     public ArrayList<Integer> getSpotPrice(ArrayList<Integer>SpotPrice)
+     public String getSpotPrice()
      {
         return SpotPrice;
      }
 
-     public int getTotalPrice()
+     public String getTotalPrice()
      {
         return TotalPrice;
      }
