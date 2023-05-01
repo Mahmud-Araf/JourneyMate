@@ -37,7 +37,7 @@
                   <Font name="Monospaced Bold Italic" size="30.0" />
                </font>
             </Label>
-            <Button layoutX="38.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifyAction" prefHeight="59.0" prefWidth="477.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Change Package Info" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="ModifyButton" layoutX="38.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifyAction" prefHeight="59.0" prefWidth="477.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Change Package Info" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>

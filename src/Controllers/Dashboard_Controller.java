@@ -52,8 +52,6 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     public void initialize(URL arg0, ResourceBundle arg1) {
 
         
-        // System.out.println(nameLabel.getText()+" "+emailLabel.getText()+passwordLabel.getText());
-        
         if(DashboardImg!=null)
         {
             DashboardImg.setOnMouseClicked(event -> {
@@ -95,7 +93,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);  
-        MainPane.setStyle("-fx-background-color:  #e36212;");
+        
         AboutButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
@@ -109,7 +107,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-        MainPane.setStyle("-fx-background-color:  #e36212;");
+        
         nameLabel = (Label) newPane.lookup("#nameLabel");
         emailLabel = (Label) newPane.lookup("#emailLabel");
         passwordLabel = (Label) newPane.lookup("#passwordLabel");
@@ -131,7 +129,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-        MainPane.setStyle("-fx-background-color: #e36212;");
+
         Label ClientNumber = (Label)newPane.lookup("#ClientNumberLabel");
         
         ClientNumber.setText(new ClientScreen_Controller().getTotalClientNumber(User.Name));
@@ -148,7 +146,6 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-        MainPane.setStyle("-fx-background-color: #e36212;");
 
         Label PackageNumber =(Label)newPane.lookup("#PackageNumberLabel");
         Label SpotNumber =(Label)newPane.lookup("#SpotNumberLabel");
@@ -165,10 +162,19 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
-    public void clickBookingButton(ActionEvent event)
+    public void clickBookingButton(ActionEvent event) throws IOException
     {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bookings.fxml"));
+        AnchorPane newPane = fxmlLoader.load();
         ContentPane.getChildren().clear();
-        MainPane.setStyle("-fx-background-color: White;");
+        ContentPane.getChildren().setAll(newPane);
+
+        Label BookingNumber =(Label)newPane.lookup("#BookingNumberLabel");
+        Label DueNumber =(Label)newPane.lookup("#DueNumberLabel");
+        BookingNumber.setText(new BookingScreen_Controller().getBookingNumber(User.Name));
+        DueNumber.setText(new BookingScreen_Controller().getDueNumber(User.Name));
+
+
         AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
