@@ -23,6 +23,8 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
     @FXML
     private Button DelButton;
     @FXML
+    private Button ModifyButton;
+    @FXML
     private Label ClientNumberLabel;
     @FXML
     private TextField nameTextField;
@@ -123,7 +125,7 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
         Alert dialog = new Alert(Alert.AlertType.NONE);
         dialog.setTitle("Change Client Info");
         dialog.setHeaderText("Enter Client Mobile Number:");
-        dialog.initOwner((Stage) DelButton.getScene().getWindow());
+        dialog.initOwner((Stage) ModifyButton.getScene().getWindow());
 
         TextField textField = new TextField();
         DialogPane dialogPane = dialog.getDialogPane();

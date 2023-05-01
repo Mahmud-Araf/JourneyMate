@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import Classes.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -15,8 +18,10 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+@SuppressWarnings("unchecked")
 
 public class PackageScreen_Controller extends Basic_Controller implements ControllerFunctions{
 
@@ -29,6 +34,8 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
     private Label RangeLabel;
     @FXML
     private Button DelButton;
+    @FXML
+    private Button ModifyButton;
 
     @FXML
     private TextField PackageNameTextField;
@@ -44,6 +51,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
     @FXML
     private ListView<Integer>spotPriceListView;
 
+    private static String PreviousPackageNameStr;
 
 
     public String getTotalNumber(String type,String UserName)
@@ -134,8 +142,8 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         }
     }
 
-    @FXML
-    private void addSpotNameClicked(ActionEvent event) 
+    
+    public void addSpotNameClicked(ActionEvent event) 
     {
         String text = spotNameTextField.getText();
         if (!text.isEmpty()) 
@@ -145,8 +153,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         }
     }
 
-    @FXML
-    private void addSpotPriceClicked(ActionEvent event) 
+    public void addSpotPriceClicked(ActionEvent event) 
     {
         String text = spotPriceTextField.getText();
         if (!text.isEmpty()) 
@@ -184,8 +191,8 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         
     }
 
-    @FXML
-    private void addPackageToDB(ActionEvent event)
+    
+    public void addPackageToDB(ActionEvent event)
     {
         startDB();
         var spotNameArrayList = new ArrayList<String>();
@@ -248,6 +255,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                             preparedStatement1.executeUpdate();
                         }
 
+
                         try {
                             changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
                         } catch (IOException e) {
@@ -267,21 +275,182 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
 
     }
 
-
-
-
-
-
     @Override
     public void modifyAction(ActionEvent event) {
-        
+        Alert dialog = new Alert(Alert.AlertType.NONE);
+        dialog.setTitle("Change Package Details");
+        dialog.setHeaderText("Enter Package Name:");
+        dialog.initOwner((Stage) ModifyButton.getScene().getWindow());
+
+        TextField textField = new TextField();
+        DialogPane dialogPane = dialog.getDialogPane();
+        dialogPane.setContent(textField);
+        dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
+        dialogPane.setStyle("-fx-background-color:#e36212;");
+
+        dialog.setResultConverter(buttonType -> {
+            if (buttonType == ButtonType.OK) {
+                PreviousPackageNameStr =textField.getText();
+                gotomodifyPackagestScreen(event, textField.getText());
+            }
+            return null;
+        });
+
+        dialog.show();
         
     }
 
+    private void gotomodifyPackagestScreen(ActionEvent event, String PackageNamestr)
+    {
+        startDB();
+
+        try {
+            setConnection();
+            preparedStatement1 = connection
+                    .prepareStatement("Select * FROM TourPackages WHERE UserName = ? AND PackageName = ?");
+            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(2, PackageNamestr);
+            resultSet = preparedStatement1.executeQuery();
+
+            if (PackageNamestr == null || !resultSet.isBeforeFirst()) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Package not found");
+                alert.setContentText("The Package was not found in the database.");
+                DialogPane dialogpane = alert.getDialogPane();
+                dialogpane.setStyle("-fx-background-color:#e36212;");
+                alert.show();
+            } 
+            else {
+                
+                String packageName=null;
+                String district=null;
+                var spotNameArrayList = new ArrayList<String>();
+                var spotPriceArrayList =new ArrayList<Integer>();
+                while (resultSet.next()) {
+                   packageName = resultSet.getString("PackageName");
+                   district = resultSet.getString("District");
+                   spotNameArrayList.add(resultSet.getString("SpotName"));
+                   spotPriceArrayList.add(resultSet.getInt("SpotPrice"));
+                   
+                }
+
+                try {
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("modifyPackageDetails.fxml"));
+                    AnchorPane root = fxmlLoader.load();
+                    
+                    PackageNameTextField=(TextField)root.lookup("#PackageNameTextField");
+                    DistrictTextField =(TextField)root.lookup("#DistrictTextField");
+                    spotNameListView = (ListView<String>) root.lookup("#spotNameListView");
+                    spotPriceListView =(ListView<Integer>)root.lookup("#spotPriceListView");
+
+                    
+                    PackageNameTextField.setText(packageName);
+                    DistrictTextField.setText(district);
+                    spotNameListView.getItems().addAll(spotNameArrayList);
+                    spotPriceListView.getItems().addAll(spotPriceArrayList);
 
 
+                    Stage stage = null;
+                    if (event != null && event.getSource() instanceof Node) {
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    }
+
+                    if (stage != null) {
+                        stage.setScene(new Scene(root));
+                        stage.setTitle("Change Client Info");
+                        stage.setResizable(false);
+                        stage.show();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeDB();
+        }
+    }
+
+    public void modifyPackageDetailsToDB(ActionEvent event)
+    {
+        startDB();
+
+        var spotNameArrayList = new ArrayList<String>();
+        var spotPriceArrayList =new ArrayList<Integer>();
+
+        String PackageNamestr = PackageNameTextField.getText();
+        String Districtstr = DistrictTextField.getText();
+
+        spotNameArrayList.addAll(spotNameListView.getItems());
+        spotPriceArrayList.addAll(spotPriceListView.getItems());
+
+        int SpotNameSize = spotNameArrayList.size();
+        int SpotPriceSize = spotPriceArrayList.size();
+
+        if(SpotNameSize==0||SpotNameSize!=SpotPriceSize||PackageNamestr==null ||Districtstr==null)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Provide all necessary information");
+            DialogPane dialogpane = alert.getDialogPane();
+            dialogpane.setStyle("-fx-background-color:#e36212;");
+            alert.show();
+        }
+        else
+        {
+            try {
+                    setConnection();
+
+                    preparedStatement2= connection
+                    .prepareStatement("Delete FROM TourPackages WHERE UserName = ? AND PackageName = ?");
+                    preparedStatement2.setString(1, User.Name);
+                    preparedStatement2.setString(2, PreviousPackageNameStr);
+                    preparedStatement2.executeUpdate();
+                    preparedStatement2=null;
+                
+                    int TotalPriceINT=0;
+
+                    for(int i=0;i<SpotPriceSize;i++)
+                    {
+                        TotalPriceINT+=spotPriceArrayList.get(i);
+                    }
+                    
+                    for(int i=0;i<SpotNameSize;i++)
+                    {
+                        
+                        preparedStatement1 = connection.prepareStatement(
+                        "INSERT INTO TourPackages (UserName,PackageName,District,SpotName,SpotPrice,TotalPrice) VALUES(?,?,?,?,?,?)");
+                        preparedStatement1.setString(1, User.Name);
+                        preparedStatement1.setString(2, PackageNamestr);
+                        preparedStatement1.setString(3, Districtstr);
+                        preparedStatement1.setString(4, spotNameArrayList.get(i));
+                        preparedStatement1.setInt(5, spotPriceArrayList.get(i));
+                        preparedStatement1.setInt(6, TotalPriceINT);
+                        preparedStatement1.executeUpdate();
+                        
+                    }
 
 
+                    try {
+                        changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+            } 
+            catch (SQLException e) {
+               e.printStackTrace();
+            }
+            finally
+            {
+                closeDB();
+            }
+
+        }
+    }
 
     @Override
     public void deleteAction(ActionEvent event) {
@@ -342,10 +511,6 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
             closeDB();
         }
     }
-
-
-
-
 
 
     @Override
