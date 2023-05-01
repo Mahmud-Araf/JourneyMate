@@ -30,7 +30,8 @@
     -fx-text-fill: black;
     border-color: rgb(0, 0, 0);
     -fx-border-color: rgb(0, 0, 0);
-    font-size: 20px;
-    -fx-font-size: 20px;
+    font-size: 15px;
+    -fx-font-size: 15px;
+    
     
 }
