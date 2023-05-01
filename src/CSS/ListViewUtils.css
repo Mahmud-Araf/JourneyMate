@@ -1,0 +1,12 @@
+.list-view {
+    font-size: 15px;
+    -fx-font-size: 15px;
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+.list-cell:odd {
+    background-color: #e36212;
+    -fx-background-color: #e36212;
+}
