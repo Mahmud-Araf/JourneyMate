@@ -20,7 +20,7 @@ import javafx.scene.input.MouseEvent;
 
 public class AddBooking_Controller extends Basic_Controller implements Initializable 
 {
-    
+    private boolean noticeflag = false;
 
     @FXML
     private Label TPLabel;
@@ -43,16 +43,6 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
         var packageNamelist = new ArrayList<String>();
 
         startDB();
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Notice");
-        alert.setHeaderText("Click Load Buttons After Changing");
-        alert.setContentText("Always click Load Buttons after Changing Package");
-        DialogPane dialogpane = alert.getDialogPane();
-        dialogpane.setStyle("-fx-background-color:#e36212;");
-        alert.showAndWait();
-
-
 
         try {
             setConnection();
@@ -85,6 +75,19 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
             for(var items :packageNamelist)
             {
                 packageChoiceBox.getItems().add(items);
+            }
+
+            if(!noticeflag)
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Notice");
+                alert.setHeaderText("Click Load Buttons After Changing");
+                alert.setContentText("Always click Load Buttons after Changing Package");
+                DialogPane dialogpane = alert.getDialogPane();
+                dialogpane.setStyle("-fx-background-color:#e36212;");
+                alert.showAndWait();
+
+                noticeflag =true;
             }
 
         } 

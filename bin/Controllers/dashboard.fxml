@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="MainPane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: White;" stylesheets="@../CSS/ButtonUtils.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
+<BorderPane fx:id="MainPane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e36212;" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
    <left>
       <AnchorPane fx:id="SidebarPane" layoutX="-200.0" prefHeight="750.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-border-color: White;" BorderPane.alignment="CENTER">
          <children>
@@ -107,6 +108,10 @@
       </AnchorPane>
    </top>
    <right>
-      <AnchorPane fx:id="ContentPane" maxHeight="745.0" maxWidth="1000.0" minHeight="745.0" minWidth="1000.0" prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: White; -fx-border-color: White;" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="ContentPane" maxHeight="745.0" maxWidth="1000.0" minHeight="745.0" minWidth="1000.0" prefHeight="745.0" prefWidth="1000.0" style="-fx-border-color: White;" BorderPane.alignment="CENTER" />
    </right>
+   <stylesheets>
+      <URL value="@../CSS/ButtonUtils.css" />
+      <URL value="@../CSS/Backgroundutils.css" />
+   </stylesheets>
 </BorderPane>
