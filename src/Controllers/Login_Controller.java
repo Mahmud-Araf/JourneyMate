@@ -11,6 +11,7 @@ import Classes.User;
 
 public class Login_Controller extends Basic_Controller  {
 
+    public static boolean noticeflag=false;
     @FXML
     private TextField nameTextField;
     @FXML
@@ -20,7 +21,7 @@ public class Login_Controller extends Basic_Controller  {
 
     public void clickSignUp(ActionEvent event) throws IOException {
 
-        changeScenewithBorderPane("signup.fxml", event,"Sign Up");
+        changeScenewithBorderPane("signup.fxml","None", event,"Sign Up");
     }
 
     public void clickSignIn(ActionEvent event){
@@ -36,7 +37,7 @@ public class Login_Controller extends Basic_Controller  {
     public void clickBackButton(ActionEvent event)
     {
         try {
-        changeScenewithBorderPane("login.fxml", event,"JourneyMate");    
+        changeScenewithBorderPane("login.fxml","None", event,"JourneyMate");    
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,7 +80,7 @@ public class Login_Controller extends Basic_Controller  {
                     preparedStatement1.setString(3, Password);
                     preparedStatement1.executeUpdate();
                     try {
-                        changeScenewithBorderPane("login.fxml",event,"Sign In");
+                        changeScenewithBorderPane("login.fxml","None",event,"Sign In");
                     } catch (Exception e) {
                        e.printStackTrace();
                     }
@@ -127,7 +128,8 @@ public class Login_Controller extends Basic_Controller  {
                     {
                         try {
                         User.setInfo(findName, findEmail, findPassword);
-                        changeScenewithBorderPane("dashboard.fxml", event,"Main Menu");   
+                        changeScenewithBorderPane("dashboard.fxml","about.fxml", event,"Main Menu");
+                        Basic_Controller.dc.AboutButton.requestFocus();  
                         } catch (Exception e) {
                            e.printStackTrace();
                         }
@@ -135,7 +137,7 @@ public class Login_Controller extends Basic_Controller  {
                     else
                     {
                         Alert alert =new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("Invaild Passord");
+                        alert.setContentText("Wrong Passord");
                         DialogPane dialogpane =alert.getDialogPane();
                         dialogpane.setStyle("-fx-background-color:#e36212;");
                         alert.show();

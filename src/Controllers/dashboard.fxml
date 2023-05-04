@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="MainPane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e36212;" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
+<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e36212;" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
    <left>
       <AnchorPane fx:id="SidebarPane" layoutX="-200.0" prefHeight="750.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-border-color: White;" BorderPane.alignment="CENTER">
          <children>

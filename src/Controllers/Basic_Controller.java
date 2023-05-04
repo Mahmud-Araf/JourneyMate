@@ -16,15 +16,52 @@ import javafx.stage.Stage;
 
 public class Basic_Controller 
 {
-    
+   
     protected Connection connection;
     protected PreparedStatement preparedStatement1,preparedStatement2;
     protected ResultSet resultSet;
+    
+    public static Dashboard_Controller dc;
 
-
-    protected static void changeScenewithBorderPane(String fxmlFilePath, ActionEvent event, String title) throws IOException
+    protected static void changeScenewithBorderPane(String fxmlFilePath,String contentFxml, ActionEvent event, String title) throws IOException
     {
-        BorderPane root = FXMLLoader.load(Basic_Controller.class.getResource(fxmlFilePath));
+        FXMLLoader loader= new FXMLLoader(Basic_Controller.class.getResource(fxmlFilePath));
+        BorderPane root =loader.load();
+
+        if(fxmlFilePath.equals("dashboard.fxml"))
+        {
+           Basic_Controller.dc = loader.getController();
+           dc.ContentPane.getChildren().clear();
+
+           if(!contentFxml.equals("None"))
+           {
+                AnchorPane newPane = FXMLLoader.load(Basic_Controller.class.getResource(contentFxml));
+                dc.ContentPane.getChildren().setAll(newPane);
+                
+                if(contentFxml.equals("about.fxml"))
+                {
+                    dc.AboutButton.requestFocus();
+                }
+                if(contentFxml.equals("clients.fxml"))
+                {
+                    dc.ClientsButton.requestFocus();
+                    dc.clickClientsButton(event);
+                   
+                }
+                else if(contentFxml.equals("packages.fxml"))
+                {
+                    dc.PackagesButton.requestFocus();
+                    dc.clickPackagesButton(event);
+                    
+                }
+                else if(contentFxml.equals("bookings.fxml"))
+                {
+                    dc.BookingButton.requestFocus();
+                    dc.clickBookingButton(event);
+                   
+                }
+           }
+        }
         Stage stage = null;
         if (event != null && event.getSource() instanceof Node) {
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -36,7 +73,8 @@ public class Basic_Controller
             stage.setTitle(title);
             stage.setResizable(false);
             stage.show();
-            scene.getRoot().requestFocus();
+           
+            scene.getRoot().requestFocus(); 
         } 
     }
 
@@ -74,7 +112,12 @@ public class Basic_Controller
     }
 
     protected void setConnection() throws SQLException{
-           connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JourneyMate","araf", "password");
+        String url = "jdbc:mysql://localhost:3306/JourneyMate?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8";
+        String user = "araf";
+        String password = "password";
+        String databasePath = "src/MySQL Database/JourneyMate.sql";
+        url += "&url=file:" + databasePath;
+        connection = DriverManager.getConnection(url, user, password);
     }
 
     protected void closeDB()

@@ -80,7 +80,7 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
             setConnection();
             preparedStatement2 = connection
                     .prepareStatement("SELECT * FROM Clients WHERE UserName = ? AND MobileNumber = ? ");
-            preparedStatement2.setString(1, User.Name);
+            preparedStatement2.setString(1, User.getName());
             preparedStatement2.setString(2, MobileNum);
             resultSet = preparedStatement2.executeQuery();
 
@@ -100,13 +100,13 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
                 } else {
                     preparedStatement1 = connection.prepareStatement(
                             "INSERT INTO Clients (UserName,ClientName,MobileNumber,Address) VALUES(?,?,?,?)");
-                    preparedStatement1.setString(1, User.Name);
+                    preparedStatement1.setString(1, User.getName());
                     preparedStatement1.setString(2, Name);
                     preparedStatement1.setString(3, MobileNum);
                     preparedStatement1.setString(4, Address);
                     preparedStatement1.executeUpdate();
                     try {
-                        changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+                        changeScenewithBorderPane("dashboard.fxml","clients.fxml", event, "Main Menu");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -152,7 +152,7 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
             setConnection();
             preparedStatement1 = connection
                     .prepareStatement("Select * FROM Clients WHERE UserName = ? AND MobileNumber = ?");
-            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(1, User.getName());
             preparedStatement1.setString(2, MobileNum);
             resultSet = preparedStatement1.executeQuery();
 
@@ -177,8 +177,10 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
                     AnchorPane root = fxmlLoader.load();
                     nameTextField = (TextField)root.lookup("#nameTextField");
                     addressTextField = (TextField)root.lookup("#addressTextField");
+                    mobileNumTextField = (TextField)root.lookup("#mobileNumTextField");
                     nameTextField.setText(client.getName());
                     addressTextField.setText(client.getAddress());
+                    mobileNumTextField.setText(client.getMobileNumber());
 
                     Stage stage = null;
                     if (event != null && event.getSource() instanceof Node) {
@@ -210,15 +212,16 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
         try {
             setConnection();
             preparedStatement1 = connection.prepareStatement(
-                    "UPDATE Clients SET ClientName = ?,Address =? WHERE UserName = ? AND MobileNumber = ?");
+                    "UPDATE Clients SET ClientName = ?,MobileNumber=?,Address =?  WHERE UserName = ? AND MobileNumber = ?");
             preparedStatement1.setString(1, nameTextField.getText());
-            preparedStatement1.setString(2, addressTextField.getText());
-            preparedStatement1.setString(3, User.Name);
-            preparedStatement1.setString(4, client.getMobileNumber());
+            preparedStatement1.setString(2, mobileNumTextField.getText());
+            preparedStatement1.setString(3, addressTextField.getText());
+            preparedStatement1.setString(4, User.getName());
+            preparedStatement1.setString(5, client.getMobileNumber());
             preparedStatement1.executeUpdate();
             
             try {
-               changeScenewithBorderPane("dashboard.fxml", event,"Main Menu");
+               changeScenewithBorderPane("dashboard.fxml","clients.fxml", event,"Main Menu");
             } catch (IOException e) {
                e.printStackTrace();
             }
@@ -261,11 +264,11 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
             setConnection();
             preparedStatement1 = connection
                     .prepareStatement("Delete FROM Clients WHERE UserName = ? AND MobileNumber = ?;");
-            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(1, User.getName());
             preparedStatement1.setString(2, MobileNum);
             int roweffected = preparedStatement1.executeUpdate();
 
-            if (roweffected == 0 || MobileNum == null) {
+            if (roweffected == 0 || MobileNum.isEmpty()) {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Client not found");
@@ -276,7 +279,7 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
             }
 
 
-            ClientNumberLabel.setText(getTotalClientNumber(User.Name));
+            ClientNumberLabel.setText(getTotalClientNumber(User.getName()));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -299,7 +302,7 @@ public class ClientScreen_Controller extends Basic_Controller implements Control
     @Override
     public void clickBackButton(ActionEvent event) {
         try {
-            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+            changeScenewithBorderPane("dashboard.fxml","clients.fxml", event, "Main Menu");
         } catch (Exception e) {
             e.printStackTrace();
         }

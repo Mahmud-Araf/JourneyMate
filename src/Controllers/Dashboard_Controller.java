@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.util.Duration;
 import Classes.User;
 
@@ -23,23 +22,21 @@ import Classes.User;
 public class Dashboard_Controller extends Basic_Controller implements Initializable, ControllerFunctions{
      
     @FXML
-    private Button AboutButton;
+    public Button AboutButton;
     @FXML
-    private Button ProfileButton;
+    public Button ProfileButton;
     @FXML
-    private Button ClientsButton;
+    public Button ClientsButton;
     @FXML
-    private Button PackagesButton;
+    public Button PackagesButton;
     @FXML
-    private Button BookingButton;
+    public Button BookingButton;
     @FXML
     private ImageView DashboardImg;
     @FXML
     private AnchorPane SidebarPane;
     @FXML
-    private AnchorPane ContentPane;
-    @FXML
-    private BorderPane MainPane;
+    public AnchorPane ContentPane;
 
     @FXML
     private Label nameLabel;
@@ -103,16 +100,18 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
 
     public void clickProfileButton(ActionEvent event) throws IOException
     {
+        
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("profile.fxml"));
         AnchorPane newPane = fxmlLoader.load();
+       
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-        
+       
         nameLabel = (Label) newPane.lookup("#nameLabel");
         emailLabel = (Label) newPane.lookup("#emailLabel");
         passwordLabel = (Label) newPane.lookup("#passwordLabel");
 
-        nameLabel.setText(User.Name);
+        nameLabel.setText(User.getName());
         emailLabel.setText(User.Email);
         passwordLabel.setText(User.Password);
 
@@ -127,12 +126,15 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     {      
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clients.fxml"));
         AnchorPane newPane = fxmlLoader.load();
+
+        
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
 
+
         Label ClientNumber = (Label)newPane.lookup("#ClientNumberLabel");
         
-        ClientNumber.setText(new ClientScreen_Controller().getTotalClientNumber(User.Name));
+        ClientNumber.setText(new ClientScreen_Controller().getTotalClientNumber(User.getName()));
         AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ClientsButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
@@ -144,16 +146,19 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     {   
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("packages.fxml"));
         AnchorPane newPane = fxmlLoader.load();
+
+        
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
+
 
         Label PackageNumber =(Label)newPane.lookup("#PackageNumberLabel");
         Label SpotNumber =(Label)newPane.lookup("#SpotNumberLabel");
         Label RangeLabel = (Label)newPane.lookup("#RangeLabel");
 
-        PackageNumber.setText(new PackageScreen_Controller().getTotalNumber("PackageNumber",User.Name));
-        SpotNumber.setText(new PackageScreen_Controller().getTotalNumber("SpotNumber",User.Name));
-        RangeLabel.setText(new PackageScreen_Controller().getPriceRange(User.Name));
+        PackageNumber.setText(new PackageScreen_Controller().getTotalNumber("PackageNumber",User.getName()));
+        SpotNumber.setText(new PackageScreen_Controller().getTotalNumber("SpotNumber",User.getName()));
+        RangeLabel.setText(new PackageScreen_Controller().getPriceRange(User.getName()));
 
         AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
         ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
@@ -166,13 +171,14 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bookings.fxml"));
         AnchorPane newPane = fxmlLoader.load();
+
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-
+         
         Label BookingNumber =(Label)newPane.lookup("#BookingNumberLabel");
         Label DueNumber =(Label)newPane.lookup("#DueNumberLabel");
-        BookingNumber.setText(new BookingScreen_Controller().getBookingNumber(User.Name));
-        DueNumber.setText(new BookingScreen_Controller().getDueNumber(User.Name));
+        BookingNumber.setText(new BookingScreen_Controller().getBookingNumber(User.getName()));
+        DueNumber.setText(new BookingScreen_Controller().getDueNumber(User.getName()));
 
 
         AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
@@ -186,7 +192,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     public void clickBackButton(ActionEvent event)
     {
         try {
-        changeScenewithBorderPane("login.fxml", event,"JourneyMate");
+        changeScenewithBorderPane("login.fxml","None", event,"JourneyMate");
         } catch (IOException e) {
            e.printStackTrace();
         }
@@ -194,7 +200,7 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
 
     public void clickSignOut(ActionEvent event)throws IOException
     {
-        changeScenewithBorderPane("login.fxml", event,"Sign In");
+        changeScenewithBorderPane("login.fxml","None", event,"Sign In");
     }
 
     
@@ -205,11 +211,11 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
        try {
         setConnection();
         preparedStatement1=connection.prepareStatement("Delete FROM Users WHERE Name = ?");
-        preparedStatement1.setString(1,User.Name);
+        preparedStatement1.setString(1,User.getName());
         preparedStatement1.executeUpdate();
         
         try {
-        changeScenewithBorderPane("signup.fxml", event,"Sign Up");   
+        changeScenewithBorderPane("signup.fxml","None", event,"Sign Up");   
         } catch (Exception e) {
            e.printStackTrace();
         }        

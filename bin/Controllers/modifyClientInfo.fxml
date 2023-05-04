@@ -27,17 +27,17 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <TextField fx:id="nameTextField" layoutX="600.0" layoutY="338.0" prefHeight="49.0" prefWidth="337.0">
+      <TextField fx:id="nameTextField" layoutX="612.0" layoutY="338.0" prefHeight="49.0" prefWidth="337.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <Label layoutX="305.0" layoutY="476.0" styleClass="label_background" text=" Address: ">
+      <Label layoutX="304.0" layoutY="574.0" styleClass="label_background" text=" Address: ">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <TextField fx:id="addressTextField" layoutX="600.0" layoutY="473.0" prefHeight="49.0" prefWidth="337.0">
+      <TextField fx:id="addressTextField" layoutX="612.0" layoutY="571.0" prefHeight="49.0" prefWidth="337.0">
          <font>
             <Font size="30.0" />
          </font>
@@ -60,6 +60,16 @@
             <String fx:value="button" />
          </styleClass>
       </Button>
+      <Label layoutX="240.0" layoutY="455.0" styleClass="label_background" text=" MobileNumber: ">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mobileNumTextField" layoutX="612.0" layoutY="452.0" prefHeight="49.0" prefWidth="337.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
    </children>
    <stylesheets>
       <URL value="@../CSS/ButtonUtils.css" />

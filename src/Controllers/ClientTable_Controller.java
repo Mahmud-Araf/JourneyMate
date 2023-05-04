@@ -49,7 +49,7 @@ public class ClientTable_Controller extends Basic_Controller implements Initiali
     @Override
     public void clickBackButton(ActionEvent event) {
         try {
-            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+            changeScenewithBorderPane("dashboard.fxml","clients.fxml", event, "Main Menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,21 +65,21 @@ public class ClientTable_Controller extends Basic_Controller implements Initiali
 
             if (choiceBox.getValue() == "None") {
                 preparedStatement1 = connection.prepareStatement("Select * FROM Clients WHERE UserName=?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
             } else if (choiceBox.getValue() == "Name") {
                 preparedStatement1 = connection
                         .prepareStatement("Select * FROM Clients WHERE UserName=? AND ClientName=?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
                 preparedStatement1.setString(2, searchTextField.getText());
             } else if (choiceBox.getValue() == "MobileNumber") {
                 preparedStatement1 = connection
                         .prepareStatement("Select * FROM Clients WHERE UserName=? AND MobileNumber=?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
                 preparedStatement1.setString(2, searchTextField.getText());
             } else {
                 preparedStatement1 = connection
                         .prepareStatement("Select * FROM Clients WHERE UserName=? AND Address=?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
                 preparedStatement1.setString(2, searchTextField.getText());
             }
 

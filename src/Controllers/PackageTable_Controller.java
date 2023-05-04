@@ -54,7 +54,7 @@ public class PackageTable_Controller extends Basic_Controller implements Initial
     @Override
     public void clickBackButton(ActionEvent event) {
         try {
-            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+            changeScenewithBorderPane("dashboard.fxml","packages.fxml", event, "Main Menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,16 +72,16 @@ public class PackageTable_Controller extends Basic_Controller implements Initial
 
             if (choiceBox.getValue() == "None") {
                 preparedStatement1 = connection.prepareStatement("Select * FROM TourPackages WHERE UserName=?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
             } else if (choiceBox.getValue() == "PackageName") {
                 preparedStatement1 = connection
                         .prepareStatement("Select * FROM TourPackages WHERE UserName=? AND PackageName=?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
                 preparedStatement1.setString(2, searchTextField.getText());
             } else if (choiceBox.getValue() == "District") {
                 preparedStatement1 = connection
                         .prepareStatement("Select * FROM TourPackages WHERE UserName=? AND District =?");
-                preparedStatement1.setString(1, User.Name);
+                preparedStatement1.setString(1, User.getName());
                 preparedStatement1.setString(2, searchTextField.getText());
             }
 

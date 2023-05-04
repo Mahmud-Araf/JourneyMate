@@ -25,8 +25,19 @@ public class User {
         User.Password = Password;
     }
 
-    public  User getInfo() {
-        return this;
+    public static String getName()
+    {
+        return Name;
     }
+
+    public static String getEmail()
+    {
+        return Email;
+    }
+
+    public static String getPassword()
+    {
+       return Password;
+    } 
 
 }
