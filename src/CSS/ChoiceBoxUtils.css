@@ -1,6 +1,6 @@
 .CheckBox_label {
-    font-size: 20px;
-    -fx-font-size: 20px;
+    font-size: 15px;
+    -fx-font-size: 15px;
     font-weight: bold;
     -fx-font-weight: bold;
     -fx-text-fill: black;
@@ -19,3 +19,4 @@
     border-color: black;
     -fx-border-color:black;
 }
+

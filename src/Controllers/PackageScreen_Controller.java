@@ -136,7 +136,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
     @Override
     public void clickBackButton(ActionEvent event) {
         try {
-            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+            changeScenewithBorderPane("dashboard.fxml","packages.fxml", event, "Main Menu");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -207,7 +207,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         int SpotNameSize = spotNameArrayList.size();
         int SpotPriceSize = spotPriceArrayList.size();
 
-        if(SpotNameSize==0||SpotNameSize!=SpotPriceSize||PackageNamestr==null ||Districtstr==null)
+        if(SpotNameSize==0||SpotNameSize!=SpotPriceSize||PackageNamestr.isEmpty() ||Districtstr.isEmpty())
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Provide all necessary information");
@@ -221,7 +221,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                     setConnection();
                     preparedStatement2 = connection
                             .prepareStatement("SELECT * FROM TourPackages WHERE UserName = ? AND PackageName = ? ");
-                    preparedStatement2.setString(1, User.Name);
+                    preparedStatement2.setString(1, User.getName());
                     preparedStatement2.setString(2,PackageNamestr);
                     resultSet = preparedStatement2.executeQuery();
 
@@ -246,7 +246,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                         {
                             preparedStatement1 = connection.prepareStatement(
                             "INSERT INTO TourPackages (UserName,PackageName,District,SpotName,SpotPrice,TotalPrice) VALUES(?,?,?,?,?,?)");
-                            preparedStatement1.setString(1, User.Name);
+                            preparedStatement1.setString(1, User.getName());
                             preparedStatement1.setString(2, PackageNamestr);
                             preparedStatement1.setString(3, Districtstr);
                             preparedStatement1.setString(4, spotNameArrayList.get(i));
@@ -257,7 +257,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
 
 
                         try {
-                            changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+                            changeScenewithBorderPane("dashboard.fxml","packages.fxml", event, "Main Menu");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -291,7 +291,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         dialog.setResultConverter(buttonType -> {
             if (buttonType == ButtonType.OK) {
                 PreviousPackageNameStr =textField.getText();
-                gotomodifyPackagestScreen(event, textField.getText());
+                gotomodifyPackagesScreen(event, textField.getText());
             }
             return null;
         });
@@ -300,7 +300,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         
     }
 
-    private void gotomodifyPackagestScreen(ActionEvent event, String PackageNamestr)
+    private void gotomodifyPackagesScreen(ActionEvent event, String PackageNamestr)
     {
         startDB();
 
@@ -308,11 +308,11 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
             setConnection();
             preparedStatement1 = connection
                     .prepareStatement("Select * FROM TourPackages WHERE UserName = ? AND PackageName = ?");
-            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(1, User.getName());
             preparedStatement1.setString(2, PackageNamestr);
             resultSet = preparedStatement1.executeQuery();
 
-            if (PackageNamestr == null || !resultSet.isBeforeFirst()) {
+            if (PackageNamestr.isEmpty() || !resultSet.isBeforeFirst()) {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Package not found");
@@ -392,7 +392,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         int SpotNameSize = spotNameArrayList.size();
         int SpotPriceSize = spotPriceArrayList.size();
 
-        if(SpotNameSize==0||SpotNameSize!=SpotPriceSize||PackageNamestr==null ||Districtstr==null)
+        if(SpotNameSize==0||SpotNameSize!=SpotPriceSize||PackageNamestr.isEmpty() ||Districtstr.isEmpty())
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Provide all necessary information");
@@ -407,7 +407,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
 
                     preparedStatement2= connection
                     .prepareStatement("Delete FROM TourPackages WHERE UserName = ? AND PackageName = ?");
-                    preparedStatement2.setString(1, User.Name);
+                    preparedStatement2.setString(1, User.getName());
                     preparedStatement2.setString(2, PreviousPackageNameStr);
                     preparedStatement2.executeUpdate();
                     preparedStatement2=null;
@@ -424,7 +424,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                         
                         preparedStatement1 = connection.prepareStatement(
                         "INSERT INTO TourPackages (UserName,PackageName,District,SpotName,SpotPrice,TotalPrice) VALUES(?,?,?,?,?,?)");
-                        preparedStatement1.setString(1, User.Name);
+                        preparedStatement1.setString(1, User.getName());
                         preparedStatement1.setString(2, PackageNamestr);
                         preparedStatement1.setString(3, Districtstr);
                         preparedStatement1.setString(4, spotNameArrayList.get(i));
@@ -436,7 +436,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
 
 
                     try {
-                        changeScenewithBorderPane("dashboard.fxml", event, "Main Menu");
+                        changeScenewithBorderPane("dashboard.fxml","packages.fxml", event, "Main Menu");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -484,7 +484,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
             setConnection();
             preparedStatement1 = connection
                     .prepareStatement("Delete FROM TourPackages WHERE UserName = ? AND PackageName = ?");
-            preparedStatement1.setString(1, User.Name);
+            preparedStatement1.setString(1, User.getName());
             preparedStatement1.setString(2, PackageName);
             int roweffected = preparedStatement1.executeUpdate();
 
@@ -499,11 +499,11 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
             }
             
             
-            PackageNumberLabel.setText(getTotalNumber("PackageNumber",User.Name));
+            PackageNumberLabel.setText(getTotalNumber("PackageNumber",User.getName()));
             
-            SpotNumberLabel.setText(getTotalNumber("SpotNumber",User.Name));
+            SpotNumberLabel.setText(getTotalNumber("SpotNumber",User.getName()));
             
-            RangeLabel.setText(getPriceRange(User.Name));
+            RangeLabel.setText(getPriceRange(User.getName()));
 
         } catch (SQLException e) {
             e.printStackTrace();
