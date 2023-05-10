@@ -6,10 +6,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import Classes.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -45,19 +48,51 @@ public class Basic_Controller
                 if(contentFxml.equals("clients.fxml"))
                 {
                     dc.ClientsButton.requestFocus();
-                    dc.clickClientsButton(event);
+                    Label ClientNumber = (Label)newPane.lookup("#ClientNumberLabel");
+                    ClientNumber.setText(new ClientScreen_Controller().getTotalClientNumber(User.getName()));
+                    dc.AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.ClientsButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
+                    dc.PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
                    
                 }
                 else if(contentFxml.equals("packages.fxml"))
                 {
                     dc.PackagesButton.requestFocus();
-                    dc.clickPackagesButton(event);
+
+                    Label PackageNumber =(Label)newPane.lookup("#PackageNumberLabel");
+                    Label SpotNumber =(Label)newPane.lookup("#SpotNumberLabel");
+                    Label RangeLabel = (Label)newPane.lookup("#RangeLabel");
+            
+                    PackageNumber.setText(new PackageScreen_Controller().getTotalNumber("PackageNumber",User.getName()));
+                    SpotNumber.setText(new PackageScreen_Controller().getTotalNumber("SpotNumber",User.getName()));
+                    RangeLabel.setText(new PackageScreen_Controller().getPriceRange(User.getName()));
+                    
+                    dc.AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.PackagesButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
+                    dc.BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                   
                     
                 }
                 else if(contentFxml.equals("bookings.fxml"))
                 {
                     dc.BookingButton.requestFocus();
-                    dc.clickBookingButton(event);
+
+                    Label BookingNumber =(Label)newPane.lookup("#BookingNumberLabel");
+                    Label DueNumber =(Label)newPane.lookup("#DueNumberLabel");
+                    BookingNumber.setText(new BookingScreen_Controller().getBookingNumber(User.getName()));
+                    DueNumber.setText(new BookingScreen_Controller().getDueNumber(User.getName()));
+
+                    dc.AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+                    dc.PackagesButton.setStyle("-fx-background-color: #e36212;"+"-fx-background-radius:50;");
+                    dc.BookingButton.setStyle("-fx-background-color: White;"+"-fx-background-radius:50;");
+                   
+                    
                    
                 }
            }

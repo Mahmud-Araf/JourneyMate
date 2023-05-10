@@ -17,7 +17,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class PackageTable_Controller extends Basic_Controller implements Initializable{
+public class PackageTable_Controller extends Basic_Controller implements Initializable
+{
 
     @FXML
     private TableView<TourPackage> packageTable;
@@ -105,7 +106,7 @@ public class PackageTable_Controller extends Basic_Controller implements Initial
                 
                 if(packageName.equals(PackageName))
                 {
-                   packages.add(new TourPackage(null,null, spotName,spotPrice,null));
+                   packages.add(new TourPackage(null,null,spotName,spotPrice,null));
                 }
                 else
                 {
@@ -132,9 +133,6 @@ public class PackageTable_Controller extends Basic_Controller implements Initial
             closeDB();
         }
     }
-
-
-    
 }
     
 

@@ -330,8 +330,6 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
             e.printStackTrace();
         }
     }
-
-
 }
 
 

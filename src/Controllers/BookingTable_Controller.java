@@ -53,7 +53,7 @@ public class BookingTable_Controller extends Basic_Controller implements Initial
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> items = FXCollections.observableArrayList();
-        items.addAll("None","ClientName","PackageName","Due");
+        items.addAll("None","BookingID","ClientName","PackageName","Due");
         choiceBox.setItems(items);
         choiceBox.setValue("None");
     }
@@ -80,7 +80,14 @@ public class BookingTable_Controller extends Basic_Controller implements Initial
             if (choiceBox.getValue() == "None") {
                 preparedStatement1 = connection.prepareStatement("Select * FROM Bookings WHERE UserName=?");
                 preparedStatement1.setString(1, User.getName());
-            } else if (choiceBox.getValue() == "ClientName") {
+            }else if(choiceBox.getValue() == "BookingID")
+            {
+                preparedStatement1 = connection
+                .prepareStatement("Select * FROM Bookings WHERE UserName=? AND BookingID=?");
+                preparedStatement1.setString(1, User.getName());
+                preparedStatement1.setString(2, searchTextField.getText());
+            }
+            else if (choiceBox.getValue() == "ClientName") {
                 preparedStatement1 = connection
                         .prepareStatement("Select * FROM Bookings WHERE UserName=? AND ClientName=?");
                 preparedStatement1.setString(1, User.getName());
@@ -126,6 +133,5 @@ public class BookingTable_Controller extends Basic_Controller implements Initial
 
     }
     
-    
-    
+
 }
