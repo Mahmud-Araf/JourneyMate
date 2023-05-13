@@ -1,22 +1,38 @@
-.CheckBox_label {
-    font-size: 15px;
-    -fx-font-size: 15px;
-    font-weight: bold;
+.CheckBox_label .label {
+    font-size: none;
+    -fx-font-size: 30px;
+    font-weight: none;
     -fx-font-weight: bold;
-    -fx-text-fill: black;
+    -fx-text-fill:rgb(223, 192, 20);
+}
+
+.tableCheckbox .label
+{
+    font-size: none;
+    -fx-font-size: 20px;
+    font-weight: none;
+    -fx-font-weight: bold;
+    -fx-text-fill:rgb(223, 192, 20);
 }
 
 .CheckBox
 {
-    background-color: white;
-   -fx-background-color: white;
+    background-color: none;
+   -fx-background-color: linear-gradient(to bottom, #063f33 , #0cac89 );;
    -fx-background-radius: 25px;
+   border-color: none;
+   -fx-border-color:rgb(214, 211, 12);
+   border-radius: none;
+   -fx-border-radius: 25px;
+   
 }
 
 .choice-box .menu-item {
-    background-color: #e36212;
-    -fx-background-color: #e36212;
-    border-color: black;
-    -fx-border-color:black;
+    background-color:none ;
+    -fx-background-color: linear-gradient(to bottom, #1d0957, #09136ee0);;
+    border-color: none;
+    -fx-border-color:white;
+    font-size: none;
+    -fx-font-size: 25px;
 }
 

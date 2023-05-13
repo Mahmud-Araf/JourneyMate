@@ -17,16 +17,24 @@
          <font>
             <Font name="System Bold Italic" size="50.0" />
          </font>
+         <styleClass>
+            <String fx:value="C059" />
+            <String fx:value="White" />
+         </styleClass>
       </Label>
-      <ImageView fitHeight="76.0" fitWidth="83.0" layoutX="353.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="76.0" fitWidth="83.0" layoutX="353.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/addBooking.png" />
+            <Image url="@../img/update%20booking.png" />
          </image>
       </ImageView>
       <Label layoutX="28.0" layoutY="199.0" text="Set A New Booking ID:">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <TextField fx:id="BookingIDTextField" layoutX="353.0" layoutY="191.0" prefHeight="46.0" prefWidth="225.0">
          <font>
@@ -37,33 +45,51 @@
          <styleClass>
             <String fx:value="CheckBox" />
             <String fx:value="CheckBox_label" />
+            <String fx:value="C059" />
          </styleClass>
       </ChoiceBox>
       <Label layoutX="799.0" layoutY="297.0" text=" Select Tour Package">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <Label layoutX="151.0" layoutY="297.0" text="Select Client">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
-      <ChoiceBox fx:id="packageChoiceBox" layoutX="799.0" layoutY="331.0" prefHeight="49.0" prefWidth="297.0" stylesheets="@../CSS/ChoiceBoxUtils.css">
+      <ChoiceBox fx:id="packageChoiceBox" layoutX="799.0" layoutY="339.0" prefHeight="49.0" prefWidth="297.0" stylesheets="@../CSS/ChoiceBoxUtils.css">
          <styleClass>
             <String fx:value="CheckBox" />
             <String fx:value="CheckBox_label" />
+            <String fx:value="C059" />
          </styleClass>
       </ChoiceBox>
       <Label layoutX="526.0" layoutY="347.0" text="Total Price">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <Label layoutX="571.0" layoutY="516.0" text="Paid">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <TextField fx:id="PaidTextField" layoutX="457.0" layoutY="560.0" prefHeight="46.0" prefWidth="307.0">
          <font>
@@ -74,6 +100,10 @@
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <Label fx:id="DueLabel" alignment="CENTER" layoutX="-1.0" layoutY="671.0" prefHeight="30.0" prefWidth="1206.0" text="0" textAlignment="CENTER" textFill="#fffefe">
          <font>
@@ -85,38 +115,58 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="28.0" layoutY="717.0" mnemonicParsing="false" onAction="#modifyBookingToDB" prefHeight="68.0" prefWidth="162.0" styleClass="button_background" stylesheets="@../CSS/ButtonUtils.css" text="Update">
+      <Button layoutX="14.0" layoutY="714.0" mnemonicParsing="false" onAction="#modifyBookingToDB" prefHeight="75.0" prefWidth="250.0" stylesheets="@../CSS/ButtonUtils.css" text="Update">
          <font>
             <Font size="30.0" />
          </font>
+         <styleClass>
+            <String fx:value="submenu_button_background" />
+            <String fx:value="SubHeading" />
+            <String fx:value="submenu_button" />
+            <String fx:value="White" />
+         </styleClass>
       </Button>
-      <Button layoutX="1031.0" layoutY="717.0" mnemonicParsing="false" onAction="#clickBackButton" prefHeight="68.0" prefWidth="131.0" styleClass="button_background" stylesheets="@../CSS/ButtonUtils.css" text="Back">
+      <Button layoutX="996.0" layoutY="717.0" mnemonicParsing="false" onAction="#clickBackButton" prefHeight="75.0" prefWidth="166.0" stylesheets="@../CSS/ButtonUtils.css" text="Back">
          <font>
             <Font size="30.0" />
          </font>
-      </Button>
-      <Button layoutX="510.0" layoutY="455.0" mnemonicParsing="false" onAction="#changeTP" stylesheets="@../CSS/ButtonUtils.css" text="Load Total Price">
          <styleClass>
-            <String fx:value="button" />
-            <String fx:value="button_background" />
+            <String fx:value="submenu_button" />
+            <String fx:value="SubHeading" />
+            <String fx:value="White" />
+            <String fx:value="submenu_button_background" />
          </styleClass>
+      </Button>
+      <Button layoutX="471.0" layoutY="454.0" mnemonicParsing="false" onAction="#changeTP" stylesheets="@../CSS/ButtonUtils.css" text="Load Total Price">
          <font>
             <Font size="20.0" />
          </font>
-      </Button>
-      <Button layoutX="494.0" layoutY="732.0" mnemonicParsing="false" onAction="#changeDue" stylesheets="@../CSS/ButtonUtils.css" text="Load Due Payment">
          <styleClass>
-            <String fx:value="button" />
-            <String fx:value="button_background" />
+            <String fx:value="submenu_button_background" />
+            <String fx:value="submenu_button" />
+            <String fx:value="Small" />
+            <String fx:value="White" />
          </styleClass>
+      </Button>
+      <Button layoutX="461.0" layoutY="728.0" mnemonicParsing="false" onAction="#changeDue" stylesheets="@../CSS/ButtonUtils.css" text="Load Due Payment">
          <font>
             <Font size="20.0" />
          </font>
+         <styleClass>
+            <String fx:value="submenu_button_background" />
+            <String fx:value="Small" />
+            <String fx:value="White" />
+            <String fx:value="submenu_button" />
+         </styleClass>
       </Button>
       <Label layoutX="610.0" layoutY="199.0" text="Number of People:">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <TextField fx:id="PersonNumberTextField" layoutX="895.0" layoutY="191.0" prefHeight="46.0" prefWidth="225.0">
          <font>
@@ -126,6 +176,8 @@
    </children>
    <stylesheets>
       <URL value="@../CSS/Backgroundutils.css" />
-      <URL value="@../CSS/Backgroundutils.css" />
+      <URL value="@../CSS/ButtonUtils.css" />
+      <URL value="@../CSS/LabelUtils.css" />
+      <URL value="@../CSS/TextFieldUtils.css" />
    </stylesheets>
 </AnchorPane>

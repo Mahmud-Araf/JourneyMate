@@ -111,7 +111,7 @@ public class BookingScreen_Controller extends Basic_Controller implements Contro
         DialogPane dialogPane = dialog.getDialogPane();
         dialogPane.setContent(textField);
         dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
-        dialogPane.setStyle("-fx-background-color:#e36212;");
+        dialogPane.setStyle("-fx-background-color:#ffc300;");
 
         dialog.setResultConverter(buttonType -> {
             if (buttonType == ButtonType.OK) {
@@ -141,7 +141,7 @@ public class BookingScreen_Controller extends Basic_Controller implements Contro
                 alert.setHeaderText("Booking not found");
                 alert.setContentText("The Booking was not found in the database.");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
             } else {
 
@@ -218,7 +218,7 @@ public class BookingScreen_Controller extends Basic_Controller implements Contro
         DialogPane dialogPane = dialog.getDialogPane();
         dialogPane.setContent(textField);
         dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
-        dialogPane.setStyle("-fx-background-color:#e36212;");
+        dialogPane.setStyle("-fx-background-color:#ffc300;");
 
         dialog.setResultConverter(buttonType -> {
             if (buttonType == ButtonType.OK) {
@@ -247,7 +247,7 @@ public class BookingScreen_Controller extends Basic_Controller implements Contro
                 alert.setHeaderText("Booking not found");
                 alert.setContentText("The Booking was not found in the database.");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
             }
 

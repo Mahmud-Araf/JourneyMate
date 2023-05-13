@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,109 +10,160 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e36212;" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
+<BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
    <left>
-      <AnchorPane fx:id="SidebarPane" layoutX="-200.0" prefHeight="750.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-border-color: White;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="SidebarPane" layoutX="-200.0" prefHeight="750.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="ProfileButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="190.0" mnemonicParsing="false" onAction="#clickProfileButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
+            <Button fx:id="ProfileButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="190.0" mnemonicParsing="false" onAction="#clickProfileButton" prefHeight="60.0" prefWidth="200.0">
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="49.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/profile.png" />
+                        <Image url="@../img/profile%20icon2.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Button fx:id="PackagesButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="430.0" mnemonicParsing="false" onAction="#clickPackagesButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
+               <styleClass>
+                  <String fx:value="dashboard_button_background" />
+                  <String fx:value="dashboard_button" />
+               </styleClass></Button>
+            <Button fx:id="PackagesButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="430.0" mnemonicParsing="false" onAction="#clickPackagesButton" prefHeight="60.0" prefWidth="200.0">
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="49.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/package.png" />
+                        <Image url="@../img/packages%20icon.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Button fx:id="BookingButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="550.0" mnemonicParsing="false" onAction="#clickBookingButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
+               <styleClass>
+                  <String fx:value="dashboard_button_background" />
+                  <String fx:value="dashboard_button" />
+               </styleClass></Button>
+            <Button fx:id="BookingButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="550.0" mnemonicParsing="false" onAction="#clickBookingButton" prefHeight="60.0" prefWidth="200.0">
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="54.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/booking.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Label layoutX="78.0" layoutY="208.0" text="Profile">
+               <styleClass>
+                  <String fx:value="dashboard_button_background" />
+                  <String fx:value="dashboard_button" />
+               </styleClass></Button>
+            <Label layoutX="86.0" layoutY="207.0" text="Profile">
+               <font>
+                  <Font name="Liberation Mono Bold" size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="Cambria" />
+               </styleClass>
+            </Label>
+            <Label layoutX="66.0" layoutY="445.0" text="Packages">
+               <font>
+                  <Font name="Liberation Mono Bold" size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="Cambria" />
+               </styleClass>
+            </Label>
+            <Label layoutX="80.0" layoutY="568.0" styleClass="White" text="Booking">
                <font>
                   <Font name="Liberation Mono Bold" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="71.0" layoutY="448.0" text="Packages">
-               <font>
-                  <Font name="Liberation Mono Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="79.0" layoutY="568.0" text="Booking">
-               <font>
-                  <Font name="Liberation Mono Bold" size="25.0" />
-               </font>
-            </Label>
-            <Button fx:id="AboutButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="70.0" mnemonicParsing="false" onAction="#clickAboutButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
+            <Button fx:id="SummaryButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="70.0" mnemonicParsing="false" onAction="#clickSummaryButton" prefHeight="60.0" prefWidth="200.0">
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="51.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/about.png" />
+                        <Image url="@../img/summary.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Label layoutX="93.0" layoutY="88.0" text="About">
+               <styleClass>
+                  <String fx:value="dashboard_button_background" />
+                  <String fx:value="dashboard_button" />
+               </styleClass></Button>
+            <Label layoutX="66.0" layoutY="85.0" text="Summary">
                <font>
                   <Font name="Liberation Mono Bold" size="25.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="Cambria" />
+               </styleClass>
             </Label>
-            <Button fx:id="ClientsButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="310.0" mnemonicParsing="false" onAction="#clickClientsButton" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #e36212; -fx-background-radius: 50;">
+            <Button fx:id="ClientsButton" alignment="TOP_LEFT" layoutX="5.0" layoutY="310.0" mnemonicParsing="false" onAction="#clickClientsButton" prefHeight="60.0" prefWidth="200.0">
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="53.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/clients.png" />
+                        <Image url="@../img/client%20icon.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Label layoutX="78.0" layoutY="328.0" text="Clients">
+               <styleClass>
+                  <String fx:value="dashboard_button_background" />
+                  <String fx:value="dashboard_button" />
+               </styleClass></Button>
+            <Label layoutX="84.0" layoutY="329.0" text="Clients">
                <font>
                   <Font name="Liberation Mono Bold" size="25.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="Cambria" />
+               </styleClass>
             </Label>
          </children>
+         <styleClass>
+            <String fx:value="white_border" />
+            <String fx:value="secondary_color" />
+         </styleClass>
       </AnchorPane>
    </left>
    <top>
-      <AnchorPane prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: #e36212; -fx-border-color: White;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="50.0" prefWidth="750.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="DashboardImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: White;">
+            <ImageView fx:id="DashboardImg" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: White;">
                <image>
                   <Image url="@../img/menu.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="347.0" layoutY="1.0" prefHeight="54.0" prefWidth="313.0" style="-fx-background-color: Black; -fx-border-color: Black;" text="  JourneyMate " textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="347.0" AnchorPane.rightAnchor="346.0" AnchorPane.topAnchor="1.0">
+            <Label alignment="CENTER" layoutX="347.0" layoutY="1.0" prefHeight="54.0" prefWidth="313.0" text="  JourneyMate " textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="347.0" AnchorPane.rightAnchor="346.0" AnchorPane.topAnchor="1.0">
                <font>
                   <Font name="System Bold Italic" size="35.0" />
                </font>
+               <styleClass>
+                  <String fx:value="SubHeading" />
+                  <String fx:value="C059" />
+                  <String fx:value="White" />
+               </styleClass>
             </Label>
-            <Button alignment="CENTER" layoutX="898.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickBackButton" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Back" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="34.0">
+            <Button alignment="CENTER" layoutX="1085.0" layoutY="5.0" mnemonicParsing="false" onAction="#clickBackButton" prefHeight="52.0" prefWidth="112.0" text="Back" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="14.0">
                <font>
                   <Font size="19.0" />
                </font>
+               <styleClass>
+                  <String fx:value="login_button" />
+                  <String fx:value="login_button_background" />
+                  <String fx:value="C059" />
+                  <String fx:value="Small" />
+               </styleClass>
             </Button>
          </children>
+         <styleClass>
+            <String fx:value="secondary_color" />
+            <String fx:value="white_border" />
+         </styleClass>
       </AnchorPane>
    </top>
    <right>
-      <AnchorPane fx:id="ContentPane" maxHeight="745.0" maxWidth="1000.0" minHeight="745.0" minWidth="1000.0" prefHeight="745.0" prefWidth="1000.0" style="-fx-border-color: White;" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="ContentPane" maxHeight="745.0" maxWidth="1000.0" minHeight="745.0" minWidth="1000.0" prefHeight="745.0" prefWidth="1000.0" styleClass="primary_color" BorderPane.alignment="CENTER" />
    </right>
    <stylesheets>
-      <URL value="@../CSS/ButtonUtils.css" />
       <URL value="@../CSS/Backgroundutils.css" />
+      <URL value="@../CSS/ButtonUtils.css" />
+      <URL value="@../CSS/LabelUtils.css" />
    </stylesheets>
 </BorderPane>

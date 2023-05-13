@@ -1,0 +1,21 @@
+.text-field {
+    background-color: none;
+    -fx-background-color: #fff;
+    -fx-background-radius:25px;
+    border-color: none;
+    -fx-border-color: #ffc300;
+    border-width: none;
+    -fx-border-width: 3px;
+    border-radius: none;
+    -fx-border-radius: 25px;
+    -fx-text-fill:#ffc300;
+}
+
+.login_size
+{
+    -fx-pref-width: 300px;
+    -fx-pref-height: 30px;
+    -fx-text-fill:#ffc300;
+    font-size: none;
+    -fx-font-size:25px;
+}

@@ -1,17 +1,51 @@
-
-
-.button:hover ,.button:focused{
-     background-color: #ffffff;
-    -fx-background-color: #ffffff !important;
+.login_button:hover,
+.login_button:focused {
+    background-color:none;
+    -fx-background-color:linear-gradient(to bottom, #a3a3a1, #fdfdfc);;
+    -fx-background-radius: 25;
     -fx-text-fill: black;
+    padding: none;
+    -fx-padding: 10px 20px;
+    cursor: none;
+    -fx-cursor: hand;
+   
+
 }
 
-
-
-.button_background
-{
-     background-color: #ffffff;
-    -fx-background-color: #000000 !important;
-    -fx-text-fill: rgb(255, 255, 255);
-    -fx-background-radius:50;
+.login_button_background {
+    background-color: none;
+    -fx-background-color: linear-gradient(to bottom, #a07c07, #ffd700);
+    -fx-background-radius:25px;
+    -fx-text-fill: white;
+    padding: none;
+    -fx-padding: 10px 20px;
+    cursor: none;
+    -fx-cursor: hand;
 }
+
+.dashboard_button_background {
+    background-color:none;
+    -fx-background-color:transparent;
+}
+
+.dashboard_button:hover,
+.dashboard_button:focused {
+    background-color:none;
+    -fx-background-color:linear-gradient(to bottom, #09687e, #15b4d8);
+    cursor:none;
+    -fx-cursor: hand;
+}
+
+.submenu_button_background {
+    background-color:none;
+    -fx-background-color:linear-gradient(to bottom, #063f33 , #0cac89 );
+    -fx-background-radius: 25;
+}
+
+.submenu_button:hover,
+.submenu_button:focused {
+    background-color:none;
+    -fx-background-color:linear-gradient(to bottom, #1d0957, #09136ee0);
+    -fx-background-radius: 25;
+}
+

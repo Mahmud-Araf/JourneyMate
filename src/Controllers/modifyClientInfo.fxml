@@ -12,43 +12,57 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="primary_color" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientScreen_Controller">
    <children>
-      <ImageView fitHeight="223.0" fitWidth="309.0" layoutX="181.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="185.0" fitWidth="223.0" layoutX="259.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/changeclient.png" />
+            <Image url="@../img/update%20client.png" />
          </image>
       </ImageView>
-      <Label layoutX="404.0" layoutY="102.0" styleClass="label_background" text="Change Client Info " textFill="WHITE">
+      <Label layoutX="398.0" layoutY="107.0" text="Change Client Info " textFill="WHITE">
          <font>
             <Font name="NimbusMonoPS-Bold" size="70.0" />
          </font>
+         <styleClass>
+            <String fx:value="Heading" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
-      <Label layoutX="326.0" layoutY="341.0" styleClass="label_background" text=" Name: ">
+      <Label layoutX="326.0" layoutY="341.0" text=" Name: ">
          <font>
             <Font size="40.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <TextField fx:id="nameTextField" layoutX="612.0" layoutY="338.0" prefHeight="49.0" prefWidth="337.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <Label layoutX="304.0" layoutY="574.0" styleClass="label_background" text=" Address: ">
+      <Label layoutX="304.0" layoutY="574.0" text=" Address: ">
          <font>
             <Font size="40.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <TextField fx:id="addressTextField" layoutX="612.0" layoutY="571.0" prefHeight="49.0" prefWidth="337.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <Button layoutX="937.0" layoutY="696.0" mnemonicParsing="false" onAction="#modifyClientInfoToDB" prefHeight="85.0" prefWidth="223.0" text="Change">
+      <Button layoutX="909.0" layoutY="696.0" mnemonicParsing="false" onAction="#modifyClientInfoToDB" prefHeight="85.0" prefWidth="251.0" text="Change">
          <font>
             <Font size="40.0" />
          </font>
          <styleClass>
-            <String fx:value="button" />
-            <String fx:value="button_background" />
+            <String fx:value="submenu_button" />
+            <String fx:value="submenu_button_background" />
+            <String fx:value="White" />
+            <String fx:value="SubHeading" />
          </styleClass>
       </Button>
       <Button layoutX="80.0" layoutY="701.0" mnemonicParsing="false" onAction="#clickBackButton" text="Back">
@@ -56,14 +70,20 @@
             <Font size="40.0" />
          </font>
          <styleClass>
-            <String fx:value="button_background" />
-            <String fx:value="button" />
+            <String fx:value="submenu_button_background" />
+            <String fx:value="submenu_button" />
+            <String fx:value="SubHeading" />
+            <String fx:value="White" />
          </styleClass>
       </Button>
-      <Label layoutX="240.0" layoutY="455.0" styleClass="label_background" text=" MobileNumber: ">
+      <Label layoutX="240.0" layoutY="455.0" text=" MobileNumber: ">
          <font>
             <Font size="40.0" />
          </font>
+         <styleClass>
+            <String fx:value="White" />
+            <String fx:value="C059" />
+         </styleClass>
       </Label>
       <TextField fx:id="mobileNumTextField" layoutX="612.0" layoutY="452.0" prefHeight="49.0" prefWidth="337.0">
          <font>
@@ -74,5 +94,7 @@
    <stylesheets>
       <URL value="@../CSS/ButtonUtils.css" />
       <URL value="@../CSS/Backgroundutils.css" />
+      <URL value="@../CSS/TextFieldUtils.css" />
+      <URL value="@../CSS/LabelUtils.css" />
    </stylesheets>
 </AnchorPane>

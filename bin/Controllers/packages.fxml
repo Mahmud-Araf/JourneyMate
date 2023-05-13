@@ -1,73 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" stylesheets="@../CSS/ButtonUtils.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PackageScreen_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PackageScreen_Controller">
    <children>
-      <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;">
+      <AnchorPane prefHeight="745.0" prefWidth="1000.0" styleClass="primary_color">
          <children>
-            <Button layoutX="627.0" layoutY="478.0" mnemonicParsing="false" onAction="#addAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Add Package" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="640.0" layoutY="478.0" mnemonicParsing="false" onAction="#addAction" text="Add Package" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+                  <String fx:value="submenu_button" />
+               </styleClass>
             </Button>
-            <Button layoutX="29.0" layoutY="478.0" mnemonicParsing="false" onAction="#showTable" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Show Package Details" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="14.0" layoutY="478.0" mnemonicParsing="false" onAction="#showTable" text="Show Package Details" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button" />
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Button>
-            <Button fx:id="DelButton" layoutX="601.0" layoutY="609.0" mnemonicParsing="false" onAction="#deleteAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Package" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="DelButton" layoutX="584.0" layoutY="609.0" mnemonicParsing="false" onAction="#deleteAction" text="Delete Package" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="submenu_button" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Button>
-            <Label layoutX="18.0" layoutY="36.0" style="-fx-background-color: Black; -fx-background-radius: 25;" text=" Total Packages  " textFill="WHITE">
+            <Label layoutX="-2.0" layoutY="45.0" text=" Total Packages  " textFill="WHITE">
                <font>
                   <Font name="Garuda Bold Oblique" size="25.0" />
                </font>
+               <styleClass>
+                  <String fx:value="DarkGreen" />
+                  <String fx:value="Small" />
+               </styleClass>
             </Label>
-            <Circle fill="#1f93ff08" layoutX="851.0" layoutY="187.0" radius="82.0" stroke="BLACK" strokeLineCap="ROUND" strokeWidth="8.0" />
+            <Circle fill="#1f93ff08" layoutX="851.0" layoutY="187.0" radius="82.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="8.0" />
             <Label fx:id="SpotNumberLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="742.0" layoutY="134.0" prefHeight="106.0" prefWidth="219.0" text="Label" textAlignment="CENTER" textFill="#fcfcfc">
                <font>
                   <Font name="Monospaced Bold Italic" size="30.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Normal" />
+                  <String fx:value="C059" />
+                  <String fx:value="Yellow" />
+               </styleClass>
             </Label>
-            <Button fx:id="ModifyButton" layoutX="38.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifyAction" prefHeight="59.0" prefWidth="477.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Change Package Info" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="ModifyButton" layoutX="14.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifyAction" prefHeight="75.0" prefWidth="539.0" text="Change Package Info" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button" />
+                  <String fx:value="SubHeading" />
+                  <String fx:value="submenu_button_background" />
+               </styleClass>
             </Button>
-            <Label layoutX="774.0" layoutY="36.0" style="-fx-background-color: Black; -fx-background-radius: 25;" text=" Total Spots  " textFill="WHITE">
+            <Label layoutX="758.0" layoutY="45.0" text=" Total Spots  " textFill="WHITE">
                <font>
                   <Font name="Garuda Bold Oblique" size="25.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Small" />
+                  <String fx:value="DarkGreen" />
+               </styleClass>
             </Label>
             <Label fx:id="PackageNumberLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="134.0" prefHeight="106.0" prefWidth="219.0" text="Label" textAlignment="CENTER" textFill="#fcfcfc">
                <font>
                   <Font name="Monospaced Bold Italic" size="30.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Yellow" />
+                  <String fx:value="Normal" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
-            <Circle fill="#1f93ff08" layoutX="117.0" layoutY="187.0" radius="82.0" stroke="BLACK" strokeLineCap="ROUND" strokeWidth="8.0" />
-            <Label layoutX="376.0" layoutY="203.0" style="-fx-background-color: Black; -fx-background-radius: 25;" text=" Current Price Range " textFill="WHITE">
+            <Circle fill="#1f93ff08" layoutX="117.0" layoutY="187.0" radius="82.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="8.0" />
+            <Label layoutX="260.0" layoutY="200.0" text=" Current Price Range " textFill="WHITE">
                <font>
                   <Font name="Garuda Bold Oblique" size="25.0" />
                </font>
+               <styleClass>
+                  <String fx:value="DarkGreen" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Label>
             <Label fx:id="RangeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="273.0" prefHeight="44.0" prefWidth="1000.0" text="Label" textFill="#fcfcfc">
                <font>
                   <Font name="Monospaced Bold Italic" size="35.0" />
                </font>
+               <styleClass>
+                  <String fx:value="SubHeading" />
+                  <String fx:value="C059" />
+                  <String fx:value="Yellow" />
+               </styleClass>
             </Label>
          </children>
       </AnchorPane>
    </children>
-   <styleClass>
-      <String fx:value="button" />
-      <String fx:value="button_background" />
-   </styleClass>
+   <stylesheets>
+      <URL value="@../CSS/Backgroundutils.css" />
+      <URL value="@../CSS/ButtonUtils.css" />
+      <URL value="@../CSS/LabelUtils.css" />
+   </stylesheets>
 </AnchorPane>

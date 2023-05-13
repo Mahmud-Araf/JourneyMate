@@ -86,7 +86,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
                 alert.setHeaderText("Click Load Buttons After Changing");
                 alert.setContentText("Always click Load Buttons after Changing Package");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.showAndWait();
 
                 Login_Controller.noticeflag=true;
@@ -124,7 +124,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
                 alert.setHeaderText("Load Failed");
                 alert.setContentText("Insert Only Numbers in PeopleNumber TextField");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
                 }
             }
@@ -151,7 +151,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
             alert.setHeaderText("Load Failed");
             alert.setContentText("First Load the TotalPrice");
             DialogPane dialogpane = alert.getDialogPane();
-            dialogpane.setStyle("-fx-background-color:#e36212;");
+            dialogpane.setStyle("-fx-background-color:#ffc300;");
             alert.show();
         }
         else
@@ -165,7 +165,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
                 alert.setHeaderText("Load Failed");
                 alert.setContentText("Insert Only Numbers in Paid TextField");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
             }
         }  
@@ -205,7 +205,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Same BookingID exist.Try a New ID");
             DialogPane dialogpane = alert.getDialogPane();
-            dialogpane.setStyle("-fx-background-color:#e36212;");
+            dialogpane.setStyle("-fx-background-color:#ffc300;");
             alert.show();
         }
         else
@@ -216,7 +216,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
                 alert.setHeaderText("Provide and click Load Buttons");
                 alert.setContentText("Provide all Information and click load buttons ");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
             }
            else
@@ -278,7 +278,7 @@ public class AddBooking_Controller extends Basic_Controller implements Initializ
             alert.setHeaderText("Provide and click Load Buttons");
             alert.setContentText("Provide all Information and click load buttons ");
             DialogPane dialogpane = alert.getDialogPane();
-            dialogpane.setStyle("-fx-background-color:#e36212;");
+            dialogpane.setStyle("-fx-background-color:#ffc300;");
             alert.show();
         }
         else

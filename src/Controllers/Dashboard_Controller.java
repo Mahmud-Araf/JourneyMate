@@ -18,11 +18,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import Classes.User;
 
+public class Dashboard_Controller extends Basic_Controller implements Initializable {
 
-public class Dashboard_Controller extends Basic_Controller implements Initializable, ControllerFunctions{
-     
     @FXML
-    public Button AboutButton;
+    public Button SummaryButton;
     @FXML
     public Button ProfileButton;
     @FXML
@@ -48,65 +47,55 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
-        
-        if(DashboardImg!=null)
-        {
+        if (DashboardImg != null) {
             DashboardImg.setOnMouseClicked(event -> {
-            
+
                 if (!SidebarPane.isVisible()) {
                     SidebarPane.setVisible(true);
-            
+
                     FadeTransition ft = new FadeTransition(Duration.seconds(0.5), SidebarPane);
                     ft.setFromValue(0);
                     ft.setToValue(1);
-            
+
                     TranslateTransition tt = new TranslateTransition(Duration.seconds(0.5), SidebarPane);
                     tt.setToX(0);
-            
+
                     ParallelTransition pt = new ParallelTransition(ft, tt);
                     pt.play();
-                } 
-                else {
+                } else {
                     FadeTransition ft = new FadeTransition(Duration.seconds(0.5), SidebarPane);
                     ft.setFromValue(1);
                     ft.setToValue(0);
-            
+
                     TranslateTransition tt = new TranslateTransition(Duration.seconds(0.5), SidebarPane);
                     tt.setToX(-200);
-            
+
                     ParallelTransition pt = new ParallelTransition(ft, tt);
                     pt.setOnFinished(e -> SidebarPane.setVisible(false));
                     pt.play();
                 }
             });
         }
-        
+
     }
 
-    public void clickAboutButton (ActionEvent event) throws IOException
-    {      
-         
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("about.fxml"));
-        AnchorPane newPane = fxmlLoader.load();
-        ContentPane.getChildren().clear();
-        ContentPane.getChildren().setAll(newPane);  
-        
-        AboutButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
-        ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-    }
+    public void clickSummaryButton(ActionEvent event) throws IOException {
 
-    public void clickProfileButton(ActionEvent event) throws IOException
-    {
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("profile.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("summary.fxml"));
         AnchorPane newPane = fxmlLoader.load();
-       
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-       
+
+    }
+
+    public void clickProfileButton(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("profile.fxml"));
+        AnchorPane newPane = fxmlLoader.load();
+
+        ContentPane.getChildren().clear();
+        ContentPane.getChildren().setAll(newPane);
+
         nameLabel = (Label) newPane.lookup("#nameLabel");
         emailLabel = (Label) newPane.lookup("#emailLabel");
         passwordLabel = (Label) newPane.lookup("#passwordLabel");
@@ -115,134 +104,95 @@ public class Dashboard_Controller extends Basic_Controller implements Initializa
         emailLabel.setText(User.Email);
         passwordLabel.setText(User.Password);
 
-        AboutButton.setStyle("-fx-background-color: #e36212 ;"+"-fx-background-radius:50;");
-        ProfileButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
-        ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
-    public void clickClientsButton(ActionEvent event) throws IOException
-    {      
+    public void clickClientsButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clients.fxml"));
         AnchorPane newPane = fxmlLoader.load();
 
-        
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
 
-
-        Label ClientNumber = (Label)newPane.lookup("#ClientNumberLabel");
+        Label ClientNumber = (Label) newPane.lookup("#ClientNumberLabel");
         ClientNumber.setText(new ClientScreen_Controller().getTotalClientNumber(User.getName()));
-        
-        AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ClientsButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
-        PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
+
     }
 
-    public void clickPackagesButton(ActionEvent event) throws IOException
-    {   
+    public void clickPackagesButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("packages.fxml"));
         AnchorPane newPane = fxmlLoader.load();
 
-        
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
 
+        Label PackageNumber = (Label) newPane.lookup("#PackageNumberLabel");
+        Label SpotNumber = (Label) newPane.lookup("#SpotNumberLabel");
+        Label RangeLabel = (Label) newPane.lookup("#RangeLabel");
 
-        Label PackageNumber =(Label)newPane.lookup("#PackageNumberLabel");
-        Label SpotNumber =(Label)newPane.lookup("#SpotNumberLabel");
-        Label RangeLabel = (Label)newPane.lookup("#RangeLabel");
-
-        PackageNumber.setText(new PackageScreen_Controller().getTotalNumber("PackageNumber",User.getName()));
-        SpotNumber.setText(new PackageScreen_Controller().getTotalNumber("SpotNumber",User.getName()));
+        PackageNumber.setText(new PackageScreen_Controller().getTotalNumber("PackageNumber", User.getName()));
+        SpotNumber.setText(new PackageScreen_Controller().getTotalNumber("SpotNumber", User.getName()));
         RangeLabel.setText(new PackageScreen_Controller().getPriceRange(User.getName()));
-
-        AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        PackagesButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
-        BookingButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
     }
 
-    public void clickBookingButton(ActionEvent event) throws IOException
-    {
+    public void clickBookingButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bookings.fxml"));
         AnchorPane newPane = fxmlLoader.load();
 
         ContentPane.getChildren().clear();
         ContentPane.getChildren().setAll(newPane);
-         
-        Label BookingNumber =(Label)newPane.lookup("#BookingNumberLabel");
-        Label DueNumber =(Label)newPane.lookup("#DueNumberLabel");
+
+        Label BookingNumber = (Label) newPane.lookup("#BookingNumberLabel");
+        Label DueNumber = (Label) newPane.lookup("#DueNumberLabel");
         BookingNumber.setText(new BookingScreen_Controller().getBookingNumber(User.getName()));
         DueNumber.setText(new BookingScreen_Controller().getDueNumber(User.getName()));
 
-
-        AboutButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ProfileButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        ClientsButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        PackagesButton.setStyle("-fx-background-color:  #e36212;"+"-fx-background-radius:50;");
-        BookingButton.setStyle("-fx-background-color:  White;"+"-fx-background-radius:50;");
     }
 
     @Override
-    public void clickBackButton(ActionEvent event)
-    {
+    public void clickBackButton(ActionEvent event) {
         try {
-        changeScenewithBorderPane("login.fxml","None", event,"JourneyMate");
+            changeScenewithBorderPane("login.fxml", "None", event, "JourneyMate");
         } catch (IOException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
-    public void clickSignOut(ActionEvent event)throws IOException
-    {
-        changeScenewithBorderPane("login.fxml","None", event,"Sign In");
+    public void clickSignOut(ActionEvent event) throws IOException {
+        changeScenewithBorderPane("login.fxml", "None", event, "Sign In");
     }
 
-    
-    @Override
-    public  void deleteAction(ActionEvent event)
-    {
-       startDB();
-       try {
-        setConnection();
-        preparedStatement1=connection.prepareStatement("Delete FROM Users WHERE Name = ?");
-        preparedStatement1.setString(1,User.getName());
-        preparedStatement1.executeUpdate();
-        
+    public void deleteUser(ActionEvent event) {
+        startDB();
         try {
-        changeScenewithBorderPane("signup.fxml","None", event,"Sign Up");   
-        } catch (Exception e) {
-           e.printStackTrace();
-        }        
-       } catch ( SQLException e) {
+            setConnection();
+            preparedStatement1 = connection.prepareStatement("Delete  FROM Users WHERE Name = ?");
+            preparedStatement1.setString(1, User.getName());
+            preparedStatement1.executeUpdate();
+            preparedStatement1 = null;
+            preparedStatement1 = connection.prepareStatement("Delete  FROM Clients WHERE UserName = ?");
+            preparedStatement1.setString(1, User.getName());
+            preparedStatement1.executeUpdate();
+
+            preparedStatement1 = null;
+            preparedStatement1 = connection.prepareStatement("Delete  FROM TourPackages WHERE UserName = ?");
+            preparedStatement1.setString(1, User.getName());
+            preparedStatement1.executeUpdate();
+
+            preparedStatement1 = null;
+            preparedStatement1 = connection.prepareStatement("Delete  FROM Bookings WHERE UserName = ?");
+            preparedStatement1.setString(1, User.getName());
+            preparedStatement1.executeUpdate();
+
+            try {
+                changeScenewithBorderPane("signup.fxml", "None", event, "Sign Up");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
-       }
-       finally
-       {
-        closeDB();
-       }
-         
-    }
+        } finally {
+            closeDB();
+        }
 
-
-
-    @Override
-    public void addAction(ActionEvent event) {
-        //No needed
-    }
-
-    @Override
-    public void modifyAction(ActionEvent event) {
-        //No needed
-    }
-
-    @Override
-    public void showTable(ActionEvent event) {
-        //No needed
     }
 }

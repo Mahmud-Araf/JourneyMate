@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,50 +12,88 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../CSS/ButtonUtils.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login_Controller">
    <right>
-      <AnchorPane prefHeight="600.0" prefWidth="543.0" style="-fx-background-color: #e36212;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="800.0" prefWidth="600.0" stylesheets="@../CSS/Backgroundutils.css" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="60.0" layoutY="260.0" text="𝑵𝒂𝒎𝒆:">
+            <Label layoutX="62.0" layoutY="270.0" text="Name:">
                <font>
                   <Font size="25.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Normal" />
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
-            <Label layoutX="41.0" layoutY="357.0" text="𝑷𝒂𝒔𝒔𝒘𝒐𝒓𝒅:">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <TextField fx:id="emailTextField" layoutX="183.0" layoutY="315.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" />
-            <PasswordField fx:id="passwordTextField" layoutX="183.0" layoutY="360.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" />
-            <Button alignment="CENTER" layoutX="211.0" layoutY="476.0" mnemonicParsing="false" onAction="#clickSignInFromSignUP" prefHeight="68.0" prefWidth="171.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="emailTextField" layoutX="225.0" layoutY="358.0" prefHeight="52.0" prefWidth="365.0" style="-fx-background-radius: 50;" styleClass="login_size" />
+            <PasswordField fx:id="passwordTextField" layoutX="232.0" layoutY="452.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" styleClass="login_size" />
+            <Button alignment="CENTER" layoutX="211.0" layoutY="631.0" mnemonicParsing="false" onAction="#clickSignInFromSignUP" prefHeight="68.0" prefWidth="171.0" stylesheets="@../CSS/ButtonUtils.css" text="𝑺𝒊𝒈𝒏 𝑰𝒏" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="35.0" />
                </font>
+               <styleClass>
+                  <String fx:value="login_button_background" />
+                  <String fx:value="login_button" />
+               </styleClass>
             </Button>
-            <Label layoutX="59.0" layoutY="312.0" text="𝑬𝒎𝒂𝒊𝒍:">
+            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="263.0" prefHeight="24.0" prefWidth="316.0" styleClass="login_size" />
+            <Label layoutX="202.0" layoutY="141.0" prefHeight="75.0" prefWidth="196.0" text=" 𝑺𝒊𝒈𝒏 𝑼𝒑">
                <font>
-                  <Font size="25.0" />
+                  <Font name="Jamrul" size="45.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
-            <TextField fx:id="nameTextField" layoutX="184.0" layoutY="263.0" prefHeight="24.0" prefWidth="316.0" style="-fx-background-radius: 50;" />
-            <Label layoutX="210.0" layoutY="149.0" prefHeight="49.0" prefWidth="172.0" text="𝑺𝒊𝒈𝒏 𝑼𝒑">
-               <font>
-                  <Font size="45.0" />
-               </font>
-            </Label>
-            <Button alignment="CENTER" layoutX="409.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickBackButton" prefHeight="67.0" prefWidth="123.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Back" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" layoutX="460.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickBackButton" prefHeight="58.0" prefWidth="126.0" stylesheets="@../CSS/ButtonUtils.css" text="Back" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
+               <styleClass>
+                  <String fx:value="login_button" />
+                  <String fx:value="login_button_background" />
+                  <String fx:value="C059" />
+                  <String fx:value="Normal" />
+               </styleClass>
             </Button>
-         </children></AnchorPane>
+            <Label layoutX="31.0" layoutY="459.0" text="Password:">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="Normal" />
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
+            </Label>
+            <Label layoutX="61.0" layoutY="365.0" text="Email:">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="Normal" />
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="primary_color" />
+            <String fx:value="yellow_border" />
+         </styleClass></AnchorPane>
    </right>
    <left>
-      <ImageView fitHeight="802.0" fitWidth="658.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../img/road.jpg" />
+            <Image url="@../img/road-13.jpg" />
          </image>
       </ImageView>
    </left>
+   <stylesheets>
+      <URL value="@../CSS/Backgroundutils.css" />
+      <URL value="@../CSS/LabelUtils.css" />
+      <URL value="@../CSS/TextFieldUtils.css" />
+   </stylesheets>
 </BorderPane>

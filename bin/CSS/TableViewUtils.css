@@ -1,36 +1,44 @@
-.table-row-cell:even {
-    background-color: white;
-    -fx-background-color: White;
-    font-weight: bold;
+
+.table-row-cell:even{
+    background-color:none ;
+    -fx-background-color:#9becdb;
+    font-weight: none;
     -fx-font-weight: bold;
 }
 
-.table-row-cell:odd {
-    background-color: #e36212;
-    -fx-background-color: #e36212;
-    font-weight: bold;
+.table-row-cell:odd{
+    background-color:none ;
+    -fx-background-color:#ffffff;
+    font-weight: none;
     -fx-font-weight: bold;
 }
 
 .table-view .column-header {
-    background-color: black;
-    -fx-background-color: black;
+    background-color:none;
+    -fx-background-color: linear-gradient(to top,#078b6f 0%, black );
     -fx-text-fill: white;
-    font-weight: bold;
+    font-weight: none;
     -fx-font-weight: bold;
 }
 
 .table-view .column-header .label {
     -fx-text-fill: white;
-    font-size: 25px;
+    font-size:none;
     -fx-font-size: 25px;
+}
+
+.table-header-row {
+    border-color: none;
+    -fx-border-color:#ffc300;
+    border-width: none;
+    -fx-border-width: 0 0 2 0;
 }
 
 .table-cell {
     -fx-text-fill: black;
-    border-color: rgb(0, 0, 0);
-    -fx-border-color: rgb(0, 0, 0);
-    font-size: 15px;
+    border-color:none;
+    -fx-border-color: #078b6f;
+    font-size: none;
     -fx-font-size: 15px;
     
     

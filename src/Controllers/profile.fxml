@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Dashboard_Controller">
    <children>
-      <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;" stylesheets="@../CSS/ButtonUtils.css">
+      <AnchorPane prefHeight="745.0" prefWidth="1000.0" styleClass="primary_color">
          <children>
-            <Label alignment="CENTER" layoutX="398.0" layoutY="53.0" text="𝑼𝒔𝒆𝒓 𝑰𝒏𝒇𝒐" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="388.0" layoutY="40.0" text="User Info" textAlignment="CENTER">
                <font>
                   <Font name="Garuda" size="50.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="Heading" />
+                  <String fx:value="Cambria" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
-            <Label layoutX="215.0" layoutY="220.0" text="𝐍𝐚𝐦𝐞:">
+            <Label layoutX="215.0" layoutY="220.0" styleClass="White" text="𝐍𝐚𝐦𝐞:">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <Label layoutX="215.0" layoutY="310.0" text="𝐄𝐦𝐚𝐢𝐥:">
+            <Label layoutX="215.0" layoutY="310.0" styleClass="White" text="𝐄𝐦𝐚𝐢𝐥:">
                <font>
                   <Font size="40.0" />
                </font>
             </Label>
-            <Label layoutX="215.0" layoutY="400.0" text="𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝:">
+            <Label layoutX="215.0" layoutY="400.0" styleClass="White" text="𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝:">
                <font>
                   <Font size="40.0" />
                </font>
@@ -35,33 +44,62 @@
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
             <Label fx:id="emailLabel" layoutX="426.0" layoutY="310.0" text="Label">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
             <Label fx:id="passwordLabel" layoutX="426.0" layoutY="400.0" text="Label">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="White" />
+                  <String fx:value="C059" />
+               </styleClass>
             </Label>
-            <Button layoutX="34.0" layoutY="597.0" mnemonicParsing="false" onAction="#deleteAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Profile" textFill="WHITE">
+            <Button layoutX="33.0" layoutY="598.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete Profile" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button" />
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Button>
-            <Button layoutX="738.0" layoutY="597.0" mnemonicParsing="false" onAction="#clickSignOut" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Sign Out" textFill="WHITE">
+            <Button layoutX="723.0" layoutY="597.0" mnemonicParsing="false" onAction="#clickSignOut" text="Sign Out" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button" />
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="Cambria" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Button>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="215.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="112.0" fitWidth="127.0" layoutX="248.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/profile2.png" />
+                  <Image url="@../img/profile%20icon2.png" />
                </image>
             </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="296.0" layoutX="20.0" layoutY="187.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="960.0" />
          </children>
+         <stylesheets>
+            <URL value="@../CSS/Backgroundutils.css" />
+            <URL value="@../CSS/LabelUtils.css" />
+            <URL value="@../CSS/ButtonUtils.css" />
+         </stylesheets>
       </AnchorPane>
    </children>
 </AnchorPane>

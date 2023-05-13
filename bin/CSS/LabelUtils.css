@@ -1,0 +1,70 @@
+/*font family*/
+
+.Cambria {
+    font-family: none;
+    -fx-font-family: 'Cambria';
+}
+
+.C059 {
+    font-family: none;
+
+    -fx-font-family: 'C059';
+}
+
+/*text color*/
+
+.White {
+    -fx-text-fill: white;
+}
+
+.DarkBlue {
+    -fx-text-fill: #003566;
+}
+
+.DarkGreen {
+    -fx-text-fill: #0be6b6;
+}
+
+.Yellow {
+    -fx-text-fill: #ffc300;
+}
+
+.Dark_Orange {
+    -fx-text-fill: #ff6600;
+}
+
+
+/*type*/
+
+.Heading {
+    font-size: none;
+    font-weight: none;
+    font-style: none;
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.SubHeading {
+    font-size: none;
+    font-weight: none;
+    font-style: none;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
+
+.Normal {
+    font-size: none;
+    font-weight: none;
+    font-style: none;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.Small {
+    font-size: none;
+    font-weight: none;
+    font-style: none;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}

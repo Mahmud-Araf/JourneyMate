@@ -1,61 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" stylesheets="@../CSS/ButtonUtils.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BookingScreen_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BookingScreen_Controller">
    <children>
-      <AnchorPane prefHeight="745.0" prefWidth="1000.0" style="-fx-background-color: #e36212;">
+      <AnchorPane prefHeight="745.0" prefWidth="1000.0" styleClass="primary_color">
          <children>
-            <Button layoutX="582.0" layoutY="424.0" mnemonicParsing="false" onAction="#addAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Add New Booking" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="611.0" layoutY="424.0" mnemonicParsing="false" onAction="#addAction" text="Add Booking" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button" />
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Button>
-            <Button layoutX="30.0" layoutY="424.0" mnemonicParsing="false" onAction="#showTable" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Show Booking Details" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="14.0" layoutY="424.0" mnemonicParsing="false" onAction="#showTable" text="Show Booking Details" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+                  <String fx:value="submenu_button" />
+               </styleClass>
             </Button>
-            <Button fx:id="DelButton" layoutX="601.0" layoutY="609.0" mnemonicParsing="false" onAction="#deleteAction" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Delete Booking" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="DelButton" layoutX="582.0" layoutY="609.0" mnemonicParsing="false" onAction="#deleteAction" text="Delete Booking" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button" />
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+               </styleClass>
             </Button>
-            <Button fx:id="ModifyButton" layoutX="21.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifyAction" prefHeight="75.0" prefWidth="505.0" style="-fx-background-color: Black; -fx-background-radius: 50;" text="Change Booking Data" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="ModifyButton" layoutX="21.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifyAction" prefHeight="75.0" prefWidth="545.0" text="Change Booking Data" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>
+               <styleClass>
+                  <String fx:value="submenu_button_background" />
+                  <String fx:value="SubHeading" />
+                  <String fx:value="submenu_button" />
+               </styleClass>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="337.0" stroke="BLACK" strokeType="INSIDE" width="1003.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="110.0" stroke="#e36212" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="4.0" width="1003.0" />
-            <Label alignment="CENTER" layoutX="84.0" layoutY="33.0" text="Total Bookings" textAlignment="CENTER" textFill="WHITE">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="337.0" stroke="#009fc2" strokeType="INSIDE" strokeWidth="5.0" width="1003.0">
+               <fill>
+                  <LinearGradient cycleMethod="REFLECT" endX="0.47142857142857136" endY="0.4809523809523808" startY="0.8428571428571429">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.21279999613761902" green="0.44058090448379517" blue="0.5600000023841858" opacity="0.6499999761581421" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.7286465167999268" green="0.7275000214576721" blue="0.75" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="110.0" stroke="#009fc2" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="4.0" styleClass="primary_color" width="1003.0">
+               <fill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="0.4809523809523808" startY="0.8428571428571429">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05000000074505806" green="0.05000000074505806" blue="0.05000000074505806" opacity="0.7279693484306335" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.2490522265434265" green="0.1876000016927719" blue="0.6700000166893005" opacity="0.6100000143051147" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Label alignment="CENTER" layoutX="124.0" layoutY="33.0" text="Total Bookings" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="35.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Yellow" />
+                  <String fx:value="Normal" />
+               </styleClass>
             </Label>
             <Label alignment="CENTER" layoutX="551.0" layoutY="33.0" text="Due Payment Booking " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="35.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Yellow" />
+                  <String fx:value="Normal" />
+               </styleClass>
             </Label>
             <Label fx:id="BookingNumberLabel" alignment="CENTER" layoutY="179.0" prefHeight="61.0" prefWidth="499.0" text="Label" textAlignment="CENTER">
                <font>
                   <Font size="75.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Heading" />
+                  <String fx:value="C059" />
+                  <String fx:value="DarkBlue" />
+               </styleClass>
             </Label>
             <Label fx:id="DueNumberLabel" alignment="CENTER" layoutX="502.0" layoutY="179.0" prefHeight="61.0" prefWidth="499.0" text="Label" textAlignment="CENTER">
                <font>
                   <Font size="75.0" />
                </font>
+               <styleClass>
+                  <String fx:value="Heading" />
+                  <String fx:value="C059" />
+                  <String fx:value="DarkBlue" />
+               </styleClass>
             </Label>
-            <Line endX="-100.0" endY="92.0" layoutX="600.0" layoutY="11.0" startX="-100.0" startY="-4.0" stroke="WHITE" strokeWidth="5.0" />
-            <Line endX="-100.0" endY="192.0" layoutX="600.0" layoutY="143.0" startX="-100.0" startY="-30.0" stroke="#0d0d0d" strokeWidth="5.0" />
+            <Line endX="-100.0" endY="92.0" layoutX="600.0" layoutY="11.0" startX="-100.0" startY="-4.0" stroke="#009fc2" strokeWidth="5.0" />
+            <Line endX="-100.0" endY="192.0" layoutX="600.0" layoutY="143.0" startX="-100.0" startY="-30.0" stroke="#009fc2" strokeWidth="5.0" />
          </children>
       </AnchorPane>
    </children>
@@ -63,4 +137,9 @@
       <String fx:value="button" />
       <String fx:value="button_background" />
    </styleClass>
+   <stylesheets>
+      <URL value="@../CSS/ButtonUtils.css" />
+      <URL value="@../CSS/Backgroundutils.css" />
+      <URL value="@../CSS/LabelUtils.css" />
+   </stylesheets>
 </AnchorPane>

@@ -212,7 +212,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Provide all necessary information");
             DialogPane dialogpane = alert.getDialogPane();
-            dialogpane.setStyle("-fx-background-color:#e36212;");
+            dialogpane.setStyle("-fx-background-color:#ffc300;");
             alert.show();
         }
         else
@@ -230,7 +230,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setContentText("Package already exists");
                         DialogPane dialogpane = alert.getDialogPane();
-                        dialogpane.setStyle("-fx-background-color:#e36212;");
+                        dialogpane.setStyle("-fx-background-color:#ffc300;");
                         alert.show();
                     }
                     else{
@@ -286,7 +286,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         DialogPane dialogPane = dialog.getDialogPane();
         dialogPane.setContent(textField);
         dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
-        dialogPane.setStyle("-fx-background-color:#e36212;");
+        dialogPane.setStyle("-fx-background-color:#ffc300;");
 
         dialog.setResultConverter(buttonType -> {
             if (buttonType == ButtonType.OK) {
@@ -318,7 +318,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                 alert.setHeaderText("Package not found");
                 alert.setContentText("The Package was not found in the database.");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
             } 
             else {
@@ -397,7 +397,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Provide all necessary information");
             DialogPane dialogpane = alert.getDialogPane();
-            dialogpane.setStyle("-fx-background-color:#e36212;");
+            dialogpane.setStyle("-fx-background-color:#ffc300;");
             alert.show();
         }
         else
@@ -464,7 +464,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
         DialogPane dialogPane = dialog.getDialogPane();
         dialogPane.setContent(textField);
         dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CLOSE);
-        dialogPane.setStyle("-fx-background-color:#e36212;");
+        dialogPane.setStyle("-fx-background-color:#ffc300;");
 
         dialog.setResultConverter(buttonType -> {
             if (buttonType == ButtonType.OK) {
@@ -494,7 +494,7 @@ public class PackageScreen_Controller extends Basic_Controller implements Contro
                 alert.setHeaderText("Package not found");
                 alert.setContentText("The Package was not found in the database.");
                 DialogPane dialogpane = alert.getDialogPane();
-                dialogpane.setStyle("-fx-background-color:#e36212;");
+                dialogpane.setStyle("-fx-background-color:#ffc300;");
                 alert.show();
             }
             

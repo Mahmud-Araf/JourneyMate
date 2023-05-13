@@ -1,12 +1,32 @@
 .list-view {
-    font-size: 15px;
-    -fx-font-size: 15px;
+    background-color: none;
+    -fx-background-color:linear-gradient(to right,#078b6f 0%, black );
+    -fx-background-radius:25px;
+    border-color: none;
+    -fx-border-color:rgb(223, 175, 19);
+    border-radius: none;
+    -fx-border-radius:25px;
+    border-width: none;
+    -fx-border-width:3px;
+    font-size: none;
+    -fx-font-size: 35px;
     font-weight: bold;
     -fx-font-weight: bold;
-    -fx-text-fill: black;
+    -fx-text-fill: rgb(223, 175, 19);
 }
 
-.list-cell:odd {
-    background-color: #e36212;
-    -fx-background-color: #e36212;
+.list-view .list-cell:filled:selected {
+    background-color: none;
+    -fx-background-color: white;
+    -fx-text-fill:black;
 }
+
+.list-view .list-cell
+{
+    
+    background-color: none;
+    -fx-background-color:linear-gradient(to right,#078b6f 0%, black );
+    -fx-text-fill: rgb(223, 175, 19);
+}
+
+

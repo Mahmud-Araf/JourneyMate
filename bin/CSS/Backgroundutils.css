@@ -1,15 +1,37 @@
-
-
-.primary_color
-{
-     background-color: #e36212;
-    -fx-background-color : #e36212;
+.primary_color {
+  background-color: none;
+  -fx-background-color: linear-gradient(#0f0c0d 0%, #009fc2 80%);
 }
 
-.label_background
-{
-     background-color: black;
-    -fx-background-color : rgb(0, 0, 0);
-    -fx-text-fill : White;
-    -fx-background-radius : 25;
+.secondary_color {
+  background-color: none;
+  -fx-background-color: linear-gradient(to right, #078b6f 0%, black);
+}
+
+.yellow_border {
+  border-color: none;
+  -fx-border-color: #ffc300;
+  border-width: none;
+  -fx-border-width: 3px;
+}
+
+.white_border {
+  border-color: none;
+  -fx-border-color: #ffffff;
+  border-width: none;
+  -fx-border-width: 3px;
+}
+
+.black_border {
+  border-color: none;
+  -fx-border-color: #000000;
+  border-width: none;
+  -fx-border-width: 3px;
+}
+
+.dark_blue_border {
+  border-color: none;
+  -fx-border-color: #003566;
+  border-width: none;
+  -fx-border-width: 3px;
 }
