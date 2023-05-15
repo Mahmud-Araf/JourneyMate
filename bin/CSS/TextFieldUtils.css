@@ -8,7 +8,7 @@
     -fx-border-width: 3px;
     border-radius: none;
     -fx-border-radius: 25px;
-    -fx-text-fill:#ffc300;
+    -fx-text-fill:#000000;
 }
 
 .login_size
