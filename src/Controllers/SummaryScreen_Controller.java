@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-public class SummaryScreenController extends Basic_Controller implements Initializable {
+public class SummaryScreen_Controller extends Basic_Controller implements Initializable {
 
     @FXML
     private Label BookingLabel;
@@ -44,7 +44,7 @@ public class SummaryScreenController extends Basic_Controller implements Initial
 
         TSLabel.setText(getTotal("TotalPrice",User.getName()));
         TDLabel.setText(getTotal("Due", User.getName()));
-        CPLabel.setText(getCP());
+        CPLabel.setText(getDeposit());
 
 
     }
@@ -96,7 +96,7 @@ public class SummaryScreenController extends Basic_Controller implements Initial
         return str;
     }
 
-    private String getCP()
+    private String getDeposit()
     {
         String str="0";
 
