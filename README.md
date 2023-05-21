@@ -83,7 +83,7 @@ git clone https://github.com/Mahmud-Araf/JourneyMate.git
     ]
 ```
 
-4. Install the [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension and set up a localhost connection using it. Then, right-click the localhost and click `New Query`. Paste the MySQL commands from `src/MySQL Database/MySQLQuery.sql` and run them. It will create a local database named **JourneyMate** in your local database.
+4. Install the [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension and set up a localhost connection ([Link](https://youtu.be/wzdCpJY6Y4c)) using it. Then, right-click the localhost and click `New Query`. Paste the MySQL commands from `src/MySQL Database/MySQLQuery.sql` and run them. It will create a local database named **JourneyMate** in your local database.
 
 ---
 
