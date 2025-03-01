@@ -4,6 +4,7 @@
   <img src="src/img/cover.jpeg" alt="Project Image">
 </p>
 ---
+
 ## Table of Contents
 - [Current Version](#current-version)
 - [Outline](#outline)
