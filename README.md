@@ -1,6 +1,8 @@
 # JourneyMate: Tour Management System
 ---
-![Project Image](src/img/cover.jpeg)
+<p align="center">
+  <img src="src/img/cover.jpeg" alt="Project Image">
+</p>
 ---
 ## Table of Contents
 - [Current Version](#current-version)
